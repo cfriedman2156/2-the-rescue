@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.gradient {
+  background: linear-gradient(90deg, #E88562 0%, #f5c6b6 100%);
+}
+
+.gradient-light {
+  background: linear-gradient(90deg, #f5c6b6 0%, #FFFFFF 100%);
+}
+
+.fa-3xl {
+  font-size: 2.5rem;
+}
+
+.h-101 {
+  height: 30rem;
+}
+
+.h-video {
+  height: 22.1rem;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
