@@ -1,6 +1,32 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Nav() {
+    const router = useRouter();
+
+    const goToAbout = (e) => {
+        e.preventDefault();
+        const offset = -40; // Adjust this value based on your navbar height
+        const scrollToSection = () => {
+            const aboutSection = document.getElementById('about-section');
+            const topPos = aboutSection.getBoundingClientRect().top + window.scrollY + offset;
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+        };
+        const findSection = () => {
+            const aboutSection = document.getElementById('about-section');
+            const topPos = aboutSection.getBoundingClientRect().top + window.scrollY + offset;
+            window.scrollTo({ top: topPos });
+        }
+
+        if (router.pathname === '/') {
+            scrollToSection();
+        } else {
+            router.push('/').then(() => {
+                findSection();
+            });
+        }
+    };
+
     useEffect(() => {
         const navToggle = document.getElementById('nav-toggle');
         const navContent = document.getElementById('nav-content');
@@ -66,7 +92,7 @@ export default function Nav() {
         <nav id="header" className="fixed w-full z-30 top-0 text-white">
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-1">
                 <div className="pl-4 flex items-center">
-                    <a className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                    <a className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
                         <img src="images/logo1.jpeg" alt="Logo" className="h-20 rounded-full inline" />
                     </a>
                 </div>
@@ -82,16 +108,16 @@ export default function Nav() {
                 <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
                     <ul className="list-reset lg:flex justify-end flex-1 items-center">
                         <li className="mr-3">
-                            <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Home</a>
+                            <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="/">Home</a>
                         </li>
                         <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">About</a>
+                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#" onClick={goToAbout}>About</a>
                         </li>
                         <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Personality Quiz</a>
+                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Quiz">Personality Quiz</a>
                         </li>
                         <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Animals</a>
+                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Animals">Animals</a>
                         </li>
                         <div className="dropdown dropdown-end">
                             <li className="mr-3">
@@ -99,23 +125,23 @@ export default function Nav() {
                                     Make a Difference
                                 </a>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                                    <li><a>Donate</a></li>
-                                    <li><a>Sponsor an Animal</a></li>
-                                    <li><a>Give Monthly</a></li>
-                                    <li><a>Volunteer</a></li>
-                                    <li><a>Adopt</a></li>
+                                    <li><a href="/Donate">Donate</a></li>
+                                    <li><a href="#">Sponsor an Animal</a></li>
+                                    <li><a href="#">Give Monthly</a></li>
+                                    <li><a href="#">Volunteer</a></li>
+                                    <li><a href="#">Adopt</a></li>
                                 </ul>
                             </li>
                         </div>
                         <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Shop</a>
+                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Shop">Shop</a>
                         </li>
                         <li className="mr-3">
                             <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Contact</a>
                         </li>
                     </ul>
-                    <button id="navAction" className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                        Donate
+                    <button id="navAction" href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <a href="/Donate">Donate</a>
                     </button>
                 </div>
             </div>
