@@ -6,7 +6,10 @@ export const GET_HORSES = gql`
       id
       name
       description
-      imageUrl
+      age
+      adoption
+      profileImage
+      photos
     }
   }
 `;

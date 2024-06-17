@@ -152,8 +152,8 @@ export default function Home() {
             <div className="w-full mb-4">
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink shadow-xl">
-              <div className="flex-1 bg-white rounded-t rounded overflow-hidden shadow">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+              <div className="flex-1 bg-white rounded-t rounded overflow-hidden ">
                 <a href="#" className="flex flex-wrap no-underline hover:no-underline">
                   <h3 className="w-full font-bold text-center mt-2 mb-4 text-4xl text-gray-800 px-6">
                     Our Animals
@@ -161,22 +161,22 @@ export default function Home() {
                 </a>
                 <img src='images/tink.webp' className='m-2 w-5/6 mx-auto rounded-lg'></img>
               </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
                 <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  <button className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     View All
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink shadow-xl">
-              <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+              <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden ">
                 <a href="#" className="flex flex-wrap no-underline hover:no-underline">
                   <h3 className="w-full font-bold text-center mt-2 text-4xl text-gray-800 px-6">
                     Personality Quiz
                   </h3>
-                  <div className="card gradient-light shadow-xl m-6">
+                  <div className="card gradient-light  m-6">
                     <div className="card-body ">
                       <p className="text-gray-800 text-center text-xl m-2">
                         Answer questions about yourself to find out which animal at the sanctuary is most like you!
@@ -188,16 +188,16 @@ export default function Home() {
                   </p> */}
                 </a>
               </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
                 <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  <button className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     Quiz Me!
                   </button>
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink shadow-xl">
-              <div className="flex-1 bg-white rounded-t rounded overflow-hidden shadow">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+              <div className="flex-1 bg-white rounded-t rounded overflow-hidden ">
                 <a href="#" className="flex flex-wrap no-underline hover:no-underline">
                   <h3 className="w-full font-bold text-center mt-2 mb-4 text-4xl text-gray-800 px-6">
                     Volunteer
@@ -205,9 +205,9 @@ export default function Home() {
                 </a>
                 <img src='images/tucker.webp' className='m-2 w-5/6 mx-auto rounded-lg'></img>
               </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
                 <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  <button className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     More Info
                   </button>
                 </div>

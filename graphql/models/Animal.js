@@ -11,8 +11,14 @@ const AnimalSchema = new mongoose.Schema({
   age: {
     type: String,
   },
-  imageUrl: {
+  adoption: {
+    type: Boolean,
+  },
+  profileImage: {
     type: String,
+  },
+  photos: {
+    type: [String],
   },
   type: {
     type: String,

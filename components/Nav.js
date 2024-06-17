@@ -44,9 +44,9 @@ export default function Nav() {
             const scrollpos = window.scrollY;
 
             if (scrollpos > 10) {
-                header.classList.add('gradient-light');
+                header.classList.add('bg-white');
                 navAction.classList.remove('bg-white');
-                navAction.classList.add('gradient');
+                navAction.classList.add('blue');
                 navAction.classList.remove('text-gray-800');
                 navAction.classList.add('text-white');
 
@@ -59,8 +59,8 @@ export default function Nav() {
                 navContent.classList.remove('bg-gray-100');
                 navContent.classList.add('bg-white');
             } else {
-                header.classList.remove('gradient-light');
-                navAction.classList.remove('gradient');
+                header.classList.remove('bg-white');
+                navAction.classList.remove('blue');
                 navAction.classList.add('bg-white');
                 navAction.classList.remove('text-white');
                 navAction.classList.add('text-gray-800');
@@ -140,8 +140,8 @@ export default function Nav() {
                             <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Contact</a>
                         </li>
                     </ul>
-                    <button id="navAction" href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    <a href="/Donate">Donate</a>
+                    <button id="navAction" href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        <a href="/Donate">Donate</a>
                     </button>
                 </div>
             </div>

@@ -27,11 +27,12 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(90deg, #E88562 0%, #f5c6b6 100%);
+  /* background: #9adce0; */
+  background: linear-gradient(90deg, #3cc4c4 0%, #9adce0 100%);
 }
 
-.gradient-light {
-  background: linear-gradient(90deg, #f5c6b6 0%, #FFFFFF 100%);
+.blue {
+  background: #3cc4c4
 }
 
 .fa-3xl {
@@ -50,4 +51,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.text-brown {
+  color: #eac978;
+}
+
+.donate-button {
+  color: #e9bc4c;
 }

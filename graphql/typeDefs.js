@@ -6,7 +6,8 @@ const typeDefs = gql`
     name: String!
     description: String
     age: String
-    imageUrl: String
+    profileImage: String
+    photos: [String]
     type: String!
   }
 
@@ -16,8 +17,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addAnimal(name: String!, description: String, age: String, imageUrl: String, type: String!): Animal
-    editAnimal(id: ID!, name: String, description: String, age: String, imageUrl: String, type: String): Animal
+    addAnimal(name: String!, description: String, age: String, profileImage: String, photos: [String], type: String!): Animal
+    editAnimal(id: ID!, name: String, description: String, age: String, profileImage: String, photos: [String], type: String): Animal
   }
 `;
 
