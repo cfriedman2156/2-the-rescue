@@ -14,6 +14,9 @@ function Horses() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
+  // Ensure data and data.animalsType are defined
+  const animals = data?.animalsType || [];
+
   return (
     <>
       <Head>
@@ -61,12 +64,12 @@ function Horses() {
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
 
-            {data.animals.map((animal) => (
+            {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
                 <div className="w-full sm:w-1/2">
                   <Link href={`/Horses/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                      <img src={animal.imageUrl} className='rounded-xl mt-6' alt={animal.name}></img>
+                      <img src={animal.profileImage} className='rounded-xl mt-6' alt={animal.name}></img>
                     </button>
                   </Link>
                 </div>
@@ -92,63 +95,3 @@ function Horses() {
 }
 
 export default Horses;
-
-
-//                         <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-//                             <div className="w-full sm:w-1/2">
-//                                 <Link href="/Horses/Cashmere">
-//                                     <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-//                                         <img src='images/cashmere.webp' className='rounded-xl mt-6'></img>
-//                                     </button>
-//                                 </Link>
-//                             </div>
-//                             <div className="w-full sm:w-1/2 p-6 mt-6">
-//                                 <div className="align-middle">
-//                                     <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3">
-//                                         Cashmere
-//                                     </h3>
-//                                     <p className="text-gray-600 my-4">
-//                                         Cashie is a registered palomino paint mare. She arrived straight from auction, and has settled in beautifully. Cashie was severely underweight, had an abscess, and a torn hamstring. The hamstring is not reparable and has left her with a limp. But thankfully it causes her no pain and she can be trail ridden lightly. Cashie is looking for her forever home.
-//                                     </p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-//                             <div className="w-full sm:w-1/2">
-//                                 <Link href="/Horses/Tucker">
-//                                     <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-//                                         <img src='images/tucker.webp' className='rounded-xl mt-6'></img>
-//                                     </button>
-//                                 </Link>
-//                             </div>
-//                             <div className="w-full sm:w-1/2 p-6 mt-6">
-//                                 <div className="align-middle">
-//                                     <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3">
-//                                         Tucker
-//                                     </h3>
-//                                     <p className="text-gray-600 my-4">
-//                                         Tucker is a 16 year old paint. Unfortunately, his owners were unable to take care of him due to his age and illness. Tucker suffers from laminitis, which affects his feet and makes it hard to place him. We hope to find him a forever home.
-//                                     </p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-//                             <div className="w-full sm:w-1/2">
-//                                 <Link href="/Horses/Viola">
-//                                     <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-//                                         <img src='images/viola.webp' className='rounded-xl mt-6'></img>
-//                                     </button>
-//                                 </Link>
-//                             </div>
-//                             <div className="w-full sm:w-1/2 p-6 mt-6">
-//                                 <div className="align-middle">
-//                                     <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3">
-//                                         Viola
-//                                     </h3>
-//                                     <p className="text-gray-600 my-4">
-//                                         Viola is a 30+ year old pinto mare. She was pulled off the same slaughter truck as Vick. She arrived about 300 pounds underweight, with very bad teeth and feet. She is now happy and healthy living out her days with Vick.
-//                                     </p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>

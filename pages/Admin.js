@@ -3,7 +3,8 @@ import Head from 'next/head';
 import { useMutation } from '@apollo/client';
 import Nav from '../components/Nav';
 import Footer from '@/components/Footer';
-import { ADD_ANIMAL } from '../graphql/mutations';
+import { ADD_ANIMAL, } from '../graphql/mutations';
+import DeleteAnimalModal from '@/components/DeleteAnimalModal';
 
 export default function Admin() {
   const [formData, setFormData] = useState({
@@ -32,33 +33,14 @@ export default function Admin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const uploadData = new FormData();
-    if (formData.profileImage) {
-      uploadData.append('profileImage', formData.profileImage);
-    }
-    if (formData.photos.length > 0) {
-      formData.photos.forEach((file) => uploadData.append('photos', file));
-    }
-
     try {
-      const uploadRes = await fetch('/api/upload', {
-        method: 'POST',
-        body: uploadData,
-      });
-
-      if (!uploadRes.ok) {
-        throw new Error('Failed to upload images');
-      }
-
-      const { profileImage, photos } = await uploadRes.json();
-
       const variables = {
         name: formData.name,
         description: formData.description,
         age: formData.age,
         adoption: formData.adoption === 'true',
-        profileImage,
-        photos,
+        profileImage: formData.profileImage,
+        photos: formData.photos,
         type: formData.type,
       };
 
@@ -180,9 +162,7 @@ export default function Admin() {
           <button className='btn w-80 text-2xl h-40 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
             Edit Animal
           </button>
-          <button className='btn w-80 text-2xl h-40 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-            Delete Animal
-          </button>
+          <DeleteAnimalModal />
         </div>
         <Footer />
       </main>

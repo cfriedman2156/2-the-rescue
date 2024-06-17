@@ -1,56 +1,42 @@
-import nc from 'next-connect';
+import nextConnect from 'next-connect';
 import multer from 'multer';
-import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
-import dbConnect from '../../lib/mongodb';
+import { v4 as uuidv4 } from 'uuid';
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: './public/uploads',
-    filename: (req, file, cb) => {
-      cb(null, `${uuidv4()}${path.extname(file.originalname)}`);
-    },
-  }),
-  fileFilter: (req, file, cb) => {
-    const filetypes = /jpeg|jpg|png|gif|webp/;
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    const mimetype = filetypes.test(file.mimetype);
-
-    if (mimetype && extname) {
-      return cb(null, true);
-    } else {
-      cb('Error: Images Only!');
-    }
+// Set up Multer storage
+const storage = multer.diskStorage({
+  destination: './public/uploads',
+  filename: (req, file, cb) => {
+    cb(null, `${uuidv4()}${path.extname(file.originalname)}`);
   },
 });
 
-const handler = nc({
-  onError: (err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).end('Something went wrong!');
-  },
-  onNoMatch: (req, res) => {
-    res.status(404).end('Page is not found');
-  },
-}).use(upload.fields([{ name: 'profileImage' }, { name: 'photos' }]));
+const upload = multer({ storage });
 
-handler.post(async (req, res) => {
-  await dbConnect();
-  try {
-    const profileImage = req.files['profileImage'][0].path.replace('public', '');
-    const photos = req.files['photos'].map((file) => file.path.replace('public', ''));
-
-    res.status(200).json({ profileImage, photos });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Failed to upload images' });
-  }
+// Set up Next.js API route with nextConnect
+const apiRoute = nextConnect({
+  onError(error, req, res) {
+    res.status(501).json({ error: `Sorry something happened! ${error.message}` });
+  },
+  onNoMatch(req, res) {
+    res.status(405).json({ error: `Method '${req.method}' not allowed` });
+  },
 });
 
-export default handler;
+apiRoute.post(upload.fields([{ name: 'profileImage', maxCount: 1 }, { name: 'photos', maxCount: 12 }]), (req, res) => {
+  const profileImage = req.files.profileImage ? req.files.profileImage[0].filename : null;
+  const photos = req.files.photos ? req.files.photos.map(file => file.filename) : [];
+
+  res.status(200).json({
+    profileImage,
+    photos,
+  });
+});
+
+export default apiRoute;
 
 export const config = {
   api: {
-    bodyParser: false, // Disable Next.js body parsing
+    bodyParser: false, // Disallow body parsing, consume as stream
   },
 };

@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_HORSES = gql`
   query GetHorses {
-    animals(type: "horse") {
+    animalsType(type: "horse") {
       id
       name
       description
@@ -10,6 +10,21 @@ export const GET_HORSES = gql`
       adoption
       profileImage
       photos
+    }
+  }
+`;
+
+export const GET_ANIMALS = gql`
+  query GetAnimals {
+    animals {
+      id
+      name
+      description
+      age
+      adoption
+      profileImage
+      photos
+      type
     }
   }
 `;

@@ -6,19 +6,22 @@ const typeDefs = gql`
     name: String!
     description: String
     age: String
+    adoption: Boolean
     profileImage: String
     photos: [String]
     type: String!
   }
 
   type Query {
-    animals(type: String!): [Animal]
+    animalsType(type: String!): [Animal]
+    animals: [Animal]
     animal(id: ID!): Animal
   }
 
   type Mutation {
-    addAnimal(name: String!, description: String, age: String, profileImage: String, photos: [String], type: String!): Animal
-    editAnimal(id: ID!, name: String, description: String, age: String, profileImage: String, photos: [String], type: String): Animal
+    addAnimal(name: String!, description: String, age: String, adoption: Boolean, profileImage: String, photos: [String], type: String!): Animal
+    editAnimal(id: ID!, name: String, description: String, age: String, adoption: Boolean, profileImage: String, photos: [String], type: String): Animal
+    deleteAnimal(id: ID!): Animal
   }
 `;
 
