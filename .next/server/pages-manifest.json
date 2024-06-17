@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Animals": "pages/Animals.js",
-  "/Horses": "pages/Horses.js",
+  "/Admin": "pages/Admin.js",
+  "/api/upload": "pages/api/upload.js",
   "/": "pages/index.js"
 }
