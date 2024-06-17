@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Horses": "pages/Horses.js",
   "/api/graphql": "pages/api/graphql.js",
-  "/Admin": "pages/Admin.js"
+  "/Admin": "pages/Admin.js",
+  "/Animals": "pages/Animals.js",
+  "/Horses": "pages/Horses.js"
 }
