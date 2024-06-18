@@ -55,7 +55,7 @@ export default function AddAnimal() {
         e.preventDefault();
         const { adoption, ...rest } = formState;
         await addAnimal({ variables: { ...rest, adoption: adoption === 'true' } });
-        // Reset form or handle success
+        alert('animal added successfully')
     };
 
     return (

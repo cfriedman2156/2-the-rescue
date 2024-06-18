@@ -3,8 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/Horses/[name]": "pages/Horses/[name].js",
-  "/Animals": "pages/Animals.js",
-  "/": "pages/index.js",
   "/Horses": "pages/Horses.js",
-  "/api/graphql": "pages/api/graphql.js"
+  "/": "pages/index.js"
 }
