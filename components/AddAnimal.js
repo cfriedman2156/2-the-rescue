@@ -4,63 +4,7 @@ import { ADD_ANIMAL } from '../graphql/mutations';
 
 export default function AddAnimal() {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        type: 'horse',
-        age: '',
-        description: '',
-        adoption: 'false',
-        profileImage: null,
-        photos: [],
-    });
-
-    const [addAnimal] = useMutation(ADD_ANIMAL);
-
-    const handleChange = (e) => {
-        const { name, value, files } = e.target;
-        if (files) {
-            setFormData({
-                ...formData,
-                [name]: files.length > 1 ? Array.from(files) : files[0],
-            });
-        } else {
-            setFormData({ ...formData, [name]: value });
-        }
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const variables = {
-                name: formData.name,
-                description: formData.description,
-                age: formData.age,
-                adoption: formData.adoption === 'true',
-                profileImage: formData.profileImage,
-                photos: formData.photos,
-                type: formData.type,
-            };
-
-            const res = await addAnimal({ variables });
-            if (res.data) {
-                alert('Animal added successfully');
-                setFormData({
-                    name: '',
-                    type: 'horse',
-                    age: '',
-                    description: '',
-                    adoption: 'false',
-                    profileImage: null,
-                    photos: [],
-                });
-            } else {
-                throw new Error('Failed to add animal');
-            }
-        } catch (error) {
-            console.error('Error in handleSubmit:', error);
-            alert(error.message);
-        }
-    };
+    
 
     return (
         <>
@@ -133,3 +77,83 @@ export default function AddAnimal() {
         </>
     )
 }
+
+
+// const [formData, setFormData] = useState({
+//     name: '',
+//     type: 'horse',
+//     age: '',
+//     description: '',
+//     adoption: 'false',
+//     profileImage: null,
+//     photos: [],
+// });
+
+// const [addAnimal] = useMutation(ADD_ANIMAL);
+
+// const handleChange = (e) => {
+//     const { name, value, files } = e.target;
+//     if (files) {
+//         setFormData({
+//             ...formData,
+//             [name]: files.length > 1 ? Array.from(files) : files[0],
+//         });
+//     } else {
+//         setFormData({ ...formData, [name]: value });
+//     }
+// };
+
+// const uploadFiles = async () => {
+//     const formDataToUpload = new FormData();
+//     if (formData.profileImage) {
+//         formDataToUpload.append('profileImage', formData.profileImage);
+//     }
+//     if (formData.photos.length > 0) {
+//         formData.photos.forEach(photo => {
+//             formDataToUpload.append('photos', photo);
+//         });
+//     }
+
+//     const response = await fetch('/api/upload', {
+//         method: 'POST',
+//         body: formDataToUpload,
+//     });
+
+//     return response.json();
+// };
+
+// const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//         const uploadResponse = await uploadFiles();
+
+//         const variables = {
+//             name: formData.name,
+//             description: formData.description,
+//             age: formData.age,
+//             adoption: formData.adoption === 'true',
+//             profileImage,
+//             photos,
+//             type: formData.type,
+//         };
+
+//         const res = await addAnimal({ variables });
+//         if (res.data) {
+//             alert('Animal added successfully');
+//             setFormData({
+//                 name: '',
+//                 type: 'horse',
+//                 age: '',
+//                 description: '',
+//                 adoption: 'false',
+//                 profileImage: null,
+//                 photos: [],
+//             });
+//         } else {
+//             throw new Error('Failed to add animal');
+//         }
+//     } catch (error) {
+//         console.error('Error in handleSubmit:', error);
+//         alert(error.message);
+//     }
+// };

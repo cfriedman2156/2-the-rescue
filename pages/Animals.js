@@ -90,7 +90,7 @@ export default function Animals() {
                                 <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
                                     Sheep and Goats
                                 </h3>
-                                <Link href="/Sheep">
+                                <Link href="/Sheep-and-Goats">
                                     <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                                         <img src='images/brittle.webp' className='rounded-xl mt-6'></img>
                                     </button>
