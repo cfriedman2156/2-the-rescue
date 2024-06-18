@@ -3,6 +3,7 @@ import Nav from '../components/Nav';
 import Footer from '@/components/Footer';
 import AddAnimal from '@/components/AddAnimal';
 import DeleteAnimalModal from '@/components/DeleteAnimalModal';
+//import AddPhotos from '@/components/AddPhotos';
 
 export default function Admin() {
   
@@ -40,6 +41,7 @@ export default function Admin() {
             Edit Animal
           </button>
           <DeleteAnimalModal />
+          {/* <AddPhotos /> */}
         </div>
         <Footer />
       </main>

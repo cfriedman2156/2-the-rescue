@@ -3,63 +3,59 @@ import { useMutation } from '@apollo/client';
 import { ADD_ANIMAL } from '../graphql/mutations';
 
 export default function AddAnimal() {
-
-    const [formData, setFormData] = useState({
+    const [formState, setFormState] = useState({
         name: '',
         type: 'horse',
         age: '',
         description: '',
         adoption: 'false',
         profileImage: null,
-        photos: [],
+        photos: []
     });
-
     const [addAnimal] = useMutation(ADD_ANIMAL);
 
-    const handleChange = (e) => {
-        const { name, value, files } = e.target;
-        if (files) {
-            setFormData({
-                ...formData,
-                [name]: files.length > 1 ? Array.from(files) : files[0],
-            });
+    const handleChange = (event) => {
+        const { name, value, type, files } = event.target;
+        if (type === 'file') {
+            if (name === 'profileImage') {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setFormState({
+                        ...formState,
+                        profileImage: reader.result
+                    });
+                };
+                reader.readAsDataURL(files[0]);
+            } else if (name === 'photos') {
+                const readers = [];
+                for (let i = 0; i < files.length; i++) {
+                    readers.push(new Promise((resolve, reject) => {
+                        const reader = new FileReader();
+                        reader.onloadend = () => resolve(reader.result);
+                        reader.onerror = reject;
+                        reader.readAsDataURL(files[i]);
+                    }));
+                }
+                Promise.all(readers).then((results) => {
+                    setFormState({
+                        ...formState,
+                        photos: results
+                    });
+                });
+            }
         } else {
-            setFormData({ ...formData, [name]: value });
+            setFormState({
+                ...formState,
+                [name]: value,
+            });
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const variables = {
-                name: formData.name,
-                description: formData.description,
-                age: formData.age,
-                adoption: formData.adoption === 'true',
-                profileImage: formData.profileImage,
-                photos: formData.photos,
-                type: formData.type,
-            };
-
-            const res = await addAnimal({ variables });
-            if (res.data) {
-                alert('Animal added successfully');
-                setFormData({
-                    name: '',
-                    type: 'horse',
-                    age: '',
-                    description: '',
-                    adoption: 'false',
-                    profileImage: null,
-                    photos: [],
-                });
-            } else {
-                throw new Error('Failed to add animal');
-            }
-        } catch (error) {
-            console.error('Error in handleSubmit:', error);
-            alert(error.message);
-        }
+        const { adoption, ...rest } = formState;
+        await addAnimal({ variables: { ...rest, adoption: adoption === 'true' } });
+        alert('animal added successfully')
     };
 
     return (
@@ -75,13 +71,13 @@ export default function AddAnimal() {
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Name</span>
                             </div>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full max-w-xs" value={formData.name} onChange={handleChange} />
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full max-w-xs" value={formState.name} onChange={handleChange} />
                         </label>
                         <label className="form-control w-full max-w-xs mb-4">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Type</span>
                             </div>
-                            <select name="type" className="select select-bordered w-full max-w-xs" value={formData.type} onChange={handleChange}>
+                            <select name="type" className="select select-bordered w-full max-w-xs" value={formState.type} onChange={handleChange}>
                                 <option value="horse">Horse</option>
                                 <option value="donkey/mule">Donkey/Mule</option>
                                 <option value="pig">Pig</option>
@@ -94,19 +90,19 @@ export default function AddAnimal() {
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Age</span>
                             </div>
-                            <input type="text" name="age" placeholder="Age" className="input input-bordered w-full max-w-xs" value={formData.age} onChange={handleChange} />
+                            <input type="text" name="age" placeholder="Age" className="input input-bordered w-full max-w-xs" value={formState.age} onChange={handleChange} />
                         </label>
                         <label className="form-control w-full max-w-xs mb-4">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Description</span>
                             </div>
-                            <textarea name="description" className="textarea textarea-bordered textarea-lg" placeholder="Description" value={formData.description} onChange={handleChange}></textarea>
+                            <textarea name="description" className="textarea textarea-bordered textarea-lg" placeholder="Description" value={formState.description} onChange={handleChange}></textarea>
                         </label>
                         <label className="form-control w-full max-w-xs mb-4">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Available for Adoption?</span>
                             </div>
-                            <select name="adoption" className="select select-bordered w-full max-w-xs" value={formData.adoption} onChange={handleChange}>
+                            <select name="adoption" className="select select-bordered w-full max-w-xs" value={formState.adoption} onChange={handleChange}>
                                 <option value="false">No</option>
                                 <option value="true">Yes</option>
                             </select>
