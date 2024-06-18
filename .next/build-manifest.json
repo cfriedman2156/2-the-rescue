@@ -10,12 +10,15 @@
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js"
   ],
-  "rootMainFiles": [],
+  "rootMainFiles": [
+    "static/chunks/webpack.js",
+    "static/chunks/main-app.js"
+  ],
   "pages": {
-    "/Admin": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Admin.js"
+      "static/chunks/pages/index.js"
     ],
     "/Animals": [
       "static/chunks/webpack.js",
@@ -26,6 +29,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/Horses.js"
+    ],
+    "/Horses/[name]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Horses/[name].js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

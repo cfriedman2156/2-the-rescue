@@ -2,8 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/graphql": "pages/api/graphql.js",
-  "/Admin": "pages/Admin.js",
+  "/Horses/[name]": "pages/Horses/[name].js",
   "/Animals": "pages/Animals.js",
-  "/Horses": "pages/Horses.js"
+  "/": "pages/index.js",
+  "/Horses": "pages/Horses.js",
+  "/api/graphql": "pages/api/graphql.js"
 }
