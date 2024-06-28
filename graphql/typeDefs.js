@@ -16,7 +16,7 @@ const typeDefs = gql`
     animalsType(type: String!): [Animal]
     animals: [Animal]
     animal(id: ID!): Animal
-    horseByName(name: String!): Animal
+    animalByName(name: String!): Animal
   }
 
   type Mutation {

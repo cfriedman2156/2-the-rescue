@@ -5,7 +5,7 @@ const resolvers = {
     animalsType: async (_, { type }) => await Animal.find({ type }),
     animals: async () => await Animal.find(),
     animal: async (_, { id }) => await Animal.findById(id),
-    horseByName: async (_, { name }) => await Animal.findOne({ name }),
+    animalByName: async (_, { name }) => await Animal.findOne({ name }),
   },
   Mutation: {
     addAnimal: async (_, { name, description, age, adoption, profileImage, photos, type }) => {

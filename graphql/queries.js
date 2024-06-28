@@ -29,9 +29,9 @@ export const GET_HORSES = gql`
   }
 `;
 
-export const GET_HORSE_BY_NAME = gql`
-  query GetHorseByName($name: String!) {
-    horseByName(name: $name) {
+export const GET_ANIMAL_BY_NAME = gql`
+  query GetAnimalByName($name: String!) {
+    animalByName(name: $name) {
       id
       name
       description
@@ -84,6 +84,7 @@ export const GET_SHEEP = gql`
     }
   }
 `;
+
 
 export const GET_OTHER = gql`
   query GetOther {
