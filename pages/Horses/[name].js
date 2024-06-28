@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { GET_HORSE_BY_NAME } from '../../graphql/queries';
+import { GET_ANIMAL_BY_NAME } from '../../graphql/queries';
 import Nav from '../../components/Nav';
-import DonateFooter from '../../components/DonateFooter';
 import Footer from '../../components/Footer';
 import React, { useState } from "react";
 
@@ -10,7 +9,7 @@ export default function HorseDetail() {
     const router = useRouter();
     const { name } = router.query;
 
-    const { loading, error, data } = useQuery(GET_HORSE_BY_NAME, {
+    const { loading, error, data } = useQuery(GET_ANIMAL_BY_NAME, {
         variables: { name },
         skip: !name,
     });
@@ -20,7 +19,7 @@ export default function HorseDetail() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    const horse = data?.horseByName;
+    const horse = data?.animalByName;
     const slides = horse?.photos || [];
 
     const nextSlide = () => {
@@ -36,7 +35,7 @@ export default function HorseDetail() {
             <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
                 <Nav />
                 <section className='pt-24 flex justify-center'>
-                    <div id="default-carousel" className="relative px-10 w-9/12" data-carousel="slide">
+                    <div id="default-carousel" className="relative px-10 w-1/2" data-carousel="slide">
                         <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
                             {slides.map((slide, index) => (
                                 <div
@@ -121,19 +120,26 @@ export default function HorseDetail() {
                 <div className="container mx-auto px-4">
                     <div className='flex mt-12 flex-wrap'>
                         {/* <img src={horse.profileImage} alt={horse.name} className="w-1/3 rounded-xl mb-4" /> */}
-                        <div className='px-6'>
+                        <div className='px-6 '>
                             <h1 className="text-6xl font-bold text-center">{horse.name}</h1>
                             <div className='py-5 px-40 text-2xl'>
-                                <p className='my-2'>Age: {horse.age}</p>
-                                <p>{horse.adoption ? 'Available for Adoption' : 'Not Available for Adoption'}</p>
-                                <p className='mt-6'>{horse.description}</p>
+                                <p className='my-2 font-bold'>Age: {horse.age}</p>
+                                <p className='font-bold'>{horse.adoption ? 'Available for Adoption' : 'Not Available for Adoption'}</p>
+                                <p className='mt-6 mb-6'>{horse.description}</p>
                             </div>
+                            
                         </div>
-                    </div>
 
+                    </div>
+                    <div className='flex justify-center text-2xl mb-10'>
+                                <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                    <a href="/Donate" className='text-black'>Sponsor {horse.name}</a>
+                                </button>
+                                
+                            </div>
 
                 </div>
-                <section className="relative -mt-12 lg:-mt-24">
+                {/* <section className="relative -mt-12 lg:-mt-24">
                     <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fillRule="nonzero">
@@ -146,21 +152,20 @@ export default function HorseDetail() {
                             </g>
                         </g>
                     </svg>
-                </section>
-                <div className="pt-4 bg-white">
+                </section> */}
+                {/* <div className="pt-4 bg-white">
                     {horse.photos && horse.photos.length > 0 && (
                         <>
                             <h2 className="text-4xl text-black text-center font-bold mb-2">Photos</h2>
                             <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                
+
                                 {horse.photos.map((photo, index) => (
                                     <img key={index} src={photo} alt={`${horse.name} photo ${index + 1}`} className="w-full rounded-xl" />
                                 ))}
                             </div>
                         </>
                     )}
-                </div>
-                <DonateFooter />
+                </div> */}
                 <Footer />
                 <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
             </main>

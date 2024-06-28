@@ -116,15 +116,28 @@ export default function Nav() {
                         <li className="mr-3">
                             <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Quiz">Personality Quiz</a>
                         </li>
-                        <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Animals">Animals</a>
-                        </li>
-                        <div className="dropdown dropdown-end">
+                        <div className="dropdown dropdown-hover">
                             <li className="mr-3">
-                                <a role="button" className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#" onClick={handleDropdownClick}>
+                                <div role="button" className="inline-block m-1 text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Animals" onClick={handleDropdownClick}>
+                                    Animals
+                                </div>
+                                <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li><a href="/Donate">Before and After</a></li>
+                                    <li><a href="/Horses">Horses</a></li>
+                                    <li><a href="/Donkeys">Donkeys and Mules</a></li>
+                                    <li><a href="/Birds">Birds</a></li>
+                                    <li><a href="/Sheep-and-Goats">Sheep and Goats</a></li>
+                                    <li><a href="/Pigs">Pigs</a></li>
+                                    <li><a href="/Other-Friends">Other Friends</a></li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div className="dropdown dropdown-hover">
+                            <li className="mr-3">
+                                <div role="button" className="inline-block m-1 text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#" onClick={handleDropdownClick}>
                                     Make a Difference
-                                </a>
-                                <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                                </div>
+                                <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><a href="/Donate">Donate</a></li>
                                     <li><a href="#">Sponsor an Animal</a></li>
                                     <li><a href="#">Give Monthly</a></li>
