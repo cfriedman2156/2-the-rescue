@@ -32,8 +32,8 @@ export default function HorseDetail() {
 
     return (
         <>
-            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
-                <Nav />
+            <Nav />
+            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>         
                 <section className='pt-24 flex justify-center'>
                     <div id="default-carousel" className="relative px-10 w-1/2" data-carousel="slide">
                         <div className="relative h-56 overflow-hidden rounded-lg md:h-96">

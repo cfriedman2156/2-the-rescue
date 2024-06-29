@@ -6,7 +6,7 @@ export default function Nav() {
 
     const goToAbout = (e) => {
         e.preventDefault();
-        const offset = -40; // Adjust this value based on your navbar height
+        const offset = -40; 
         const scrollToSection = () => {
             const aboutSection = document.getElementById('about-section');
             const topPos = aboutSection.getBoundingClientRect().top + window.scrollY + offset;
@@ -85,7 +85,6 @@ export default function Nav() {
 
     const handleDropdownClick = (e) => {
         e.preventDefault();
-        // Add your dropdown toggle logic here if needed
     };
 
     return (
@@ -93,7 +92,7 @@ export default function Nav() {
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-1">
                 <div className="pl-4 flex items-center">
                     <a className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
-                        <img src="images/logo1.jpeg" alt="Logo" className="h-20 rounded-full inline" />
+                        <img src="images/2therescuelogo.png" alt="Logo" className="h-20 rounded-full inline" />
                     </a>
                 </div>
 
@@ -122,7 +121,7 @@ export default function Nav() {
                                     Animals
                                 </div>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><a href="/Donate">Before and After</a></li>
+                                    <li><a href="/Before-and-After">Before and After</a></li>
                                     <li><a href="/Horses">Horses</a></li>
                                     <li><a href="/Donkeys">Donkeys and Mules</a></li>
                                     <li><a href="/Birds">Birds</a></li>
