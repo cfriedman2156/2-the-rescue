@@ -33,6 +33,7 @@ const schema = makeExecutableSchema({
 const apolloServer = new ApolloServer({
   schema,
   context: ({ req }) => authMiddleware({ req }),
+  uploads: { maxFieldSize: 10000000,}
 });
 
 const startServer = apolloServer.start();

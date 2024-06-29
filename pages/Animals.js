@@ -8,8 +8,8 @@ import Footer from '@/components/Footer';
 export default function Animals() {
     return (
         <>           
-            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
-                <Nav />
+            <Nav />
+            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>              
                 <AnimalsHero
                     title="Our Animals"
                     description="We rescue many types of animals from horses to ducks and everything in between! They come from a variety of places including auctions, owner relinquishments, and animal control."

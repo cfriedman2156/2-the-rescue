@@ -85,6 +85,20 @@ export const GET_SHEEP = gql`
   }
 `;
 
+export const GET_PIGS = gql`
+  query GetPigs {
+    animalsType(type: "pig") {
+      id
+      name
+      description
+      age
+      adoption
+      profileImage
+      photos
+    }
+  }
+`;
+
 
 export const GET_OTHER = gql`
   query GetOther {

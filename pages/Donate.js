@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '@/components/Footer';
+import DonateButton from '@/components/DonateButton';
 import { useState } from 'react';
 
 export default function Donate() {
@@ -27,7 +27,7 @@ export default function Donate() {
           </div>
           <div className="flex justify-center mt-8">
             <button
-              className={`mx-2 py-7 px-8 rounded-full font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out ${selectedOption === 'once'
+              className={`mx-2 py-7 px-8 rounded-lg font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out ${selectedOption === 'once'
                 ? 'bg-blue-500 text-white scale-105'
                 : 'bg-white text-gray-800 hover:bg-gray-200'
                 }`}
@@ -36,7 +36,7 @@ export default function Donate() {
               Donate Once
             </button>
             <button
-              className={`mx-2 py-7 px-8 rounded-full font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out ${selectedOption === 'monthly'
+              className={`mx-2 py-7 px-8 rounded-lg font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out ${selectedOption === 'monthly'
                 ? 'bg-blue-500 text-white scale-105'
                 : 'bg-white text-gray-800 hover:bg-gray-200'
                 }`}
@@ -46,34 +46,34 @@ export default function Donate() {
             </button>
           </div>
           <div className='pt-14 pb-12 flex justify-center flex-wrap'>
-            <button className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out bg-white hover:bg-gray-200">
+            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
               <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-7">$5</h2>
+                <h2 className="text-5xl font-bold pb-4">$5</h2>
                 <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-
+                <DonateButton amount={500} />
               </div>
-            </button>
-            <button className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out bg-white hover:bg-gray-200">
+            </div>
+            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
               <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-7">$10</h2>
+                <h2 className="text-5xl font-bold pb-4">$10</h2>
                 <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-
+                <DonateButton amount={1000} />
               </div>
-            </button>
-            <button className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out bg-white hover:bg-gray-200">
+            </div>
+            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
               <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-7">$25</h2>
+                <h2 className="text-5xl font-bold pb-4">$25</h2>
                 <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-
+                <DonateButton amount={2500} />
               </div>
-            </button>
-            <button className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg focus:outline-none transform transition duration-300 ease-in-out bg-white hover:bg-gray-200">
+            </div>
+            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
               <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-7">Custom</h2>
+                <h2 className="text-5xl font-bold pb-4">Custom</h2>
                 <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-
+                <DonateButton amount={500} />
               </div>
-            </button>
+            </div>
           </div>
         </section>
         <section className='pb-14'>
