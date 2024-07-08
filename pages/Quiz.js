@@ -4,23 +4,36 @@ import { quiz } from "@/components/quizData";
 import { useState } from "react";
 
 export default function Quiz() {
-    
-    const [ activeQuestion, setActiveQuestion ] = useState(0);
-    const [ selectedAnswer, setSelectedAnswer ] = useState('');
-    const [ checked, setChecked ] = useState(false);
-    const [ selectedAnswerIndex, setSelectedAnswerIndex ] = useState(null);
-    const [ showResult, setShowResult ] = useState(false);
-    const [ result, setResult ] = useState('');
-    
+
+    const [activeQuestion, setActiveQuestion] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState('');
+    const [checked, setChecked] = useState(false);
+    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+    const [showResult, setShowResult] = useState(false);
+    const [result, setResult] = useState('');
+
     const { questions } = quiz;
     const { question, answers } = questions[activeQuestion];
-    
+
     const answerSelected = (answer, idx) => {
         setChecked(true);
         setSelectedAnswerIndex(idx);
         //add functionality to make answer geared towards an animal
     }
 
+    const nextQuestion = () => {
+        setSelectedAnswerIndex(null);
+        setResult((prev) => {
+
+        });
+        if (activeQuestion !== questions.length - 1) {
+            setActiveQuestion((prev) => prev + 1)
+        } else {
+            setActiveQuestion(0);
+            setShowResult(true);
+        }
+        setChecked(false);
+    }
 
     return (
         <>
@@ -35,25 +48,48 @@ export default function Quiz() {
                     </div>
                 </section>
                 <section className="flex flex-col items-center">
-                    <h1 className="text-4xl font-bold text-center pt-10">Question {activeQuestion + 1}/10</h1>
-                    <div className="bg-white px-20 pb-20 m-10 shadow-xl rounded-3xl text-black">
+                    {!showResult ? (
+                        <h1 className="text-4xl font-bold text-center pt-10">
+                            Question {activeQuestion + 1}/10
+                        </h1>
+                    ) : (
+                        <h1 className="text-4xl font-bold text-center pt-10">
+
+                        </h1>
+                    )}
+                    <div className="bg-white px-20 pb-20 w-full m-10 shadow-xl rounded-3xl text-black">
                         {!showResult ? (
                             <div className='quiz-container'>
                                 <h3 className="text-center text-5xl font-semibold m-10">{questions[activeQuestion].question}</h3>
-                                <div className="flex wrap items-center justify-center"> 
+                                <div className="flex flex-wrap items-center justify-center">
                                     {answers.map((answer, idx) => (
-                                        <button 
-                                            key={idx} 
+                                        <button
+                                            key={idx}
                                             onClick={() => answerSelected(answer, idx)}
                                             className="btn h-60 w-60 text-3xl m-4">
-                                                {answer}
-                                        </button>                                   
-                                ))}
+                                            {answer}
+                                        </button>
+                                    ))}
+
+                                </div>
+                                <div className="flex mx-4 justify-center">
+                                    {checked ? (
+                                        <button onClick={nextQuestion} className="btn btn-primary w-40 h-20 mt-5 text-3xl">
+                                            {activeQuestion === question.length - 1 ? 'Finish' : 'Next'}
+                                        </button>
+                                    ) : (
+                                        <button onClick={nextQuestion} className="btn btn-disabled w-40 h-20 mt-5 text-3xl">
+                                            {activeQuestion === question.length - 1 ? 'Finish' : 'Next'}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
-                            ) : (
-                            <div className='quiz-container'></div>
-                            ) }
+                        ) : (
+                            <div className='quiz-container'>
+                                <h3 className="text-center text-5xl font-semibold m-10">Results</h3>
+
+                            </div>
+                        )}
                     </div>
                 </section>
                 <section className="pt-20 relative -mt-12 lg:-mt-24">

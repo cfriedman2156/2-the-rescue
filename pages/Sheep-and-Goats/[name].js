@@ -123,7 +123,7 @@ export default function SheepDetail() {
                             <h1 className="text-6xl font-bold text-center">{animal.name}</h1>
                             <div className='py-5 px-40 text-2xl'>
                                 <p className='my-2 font-bold'>Age: {animal.age}</p>
-                                <p className='font-bold'>{animal.adoption ? 'Available for Adoption' : 'Not Available for Adoption'}</p>
+                                <p className='font-bold'>{animal.adoption ? 'Available for Adoption' : 'Sanctuary Animal'}</p>
                                 <p className='mt-6 mb-6'>{animal.description}</p>
                             </div>
                             

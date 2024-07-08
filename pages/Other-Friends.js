@@ -51,7 +51,7 @@ function OtherFriends() {
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
                 <div className="w-full sm:w-1/2">
-                  <Link href={`/Donkeys/${animal.name}`}>
+                  <Link href={`/Other-Friends/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6' alt={animal.name}></img>
                     </button>

@@ -10,7 +10,7 @@ export const quiz = {
         {
             id: 2,
             question: 'Pick a comfort food',
-            answers: ["Mac 'n cheese", 'Ice Cream', 'Soup', 'Pie', ],
+            answers: ["Mac 'n cheese", 'Ice Cream', 'Soup', 'Pie', 'Chocolate' ],
             answersPoints: [],
         },
         {

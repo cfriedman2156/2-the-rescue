@@ -15,20 +15,20 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/Donate": [
+    "/Admin": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Donate.js"
-    ],
-    "/Donkeys": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Donkeys.js"
+      "static/chunks/pages/Admin.js"
     ],
     "/Other-Friends": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/Other-Friends.js"
+    ],
+    "/Other-Friends/[name]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Other-Friends/[name].js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

@@ -4,7 +4,6 @@ import Cors from 'cors';
 import typeDefs from '../../graphql/typeDefs';
 import resolvers from '../../graphql/resolvers';
 import db from '../../lib/mongodb';
-import { authMiddleware } from '../../utils/auth';
 
 // Initialize the cors middleware
 const cors = Cors({
@@ -32,7 +31,10 @@ const schema = makeExecutableSchema({
 
 const apolloServer = new ApolloServer({
   schema,
-  context: ({ req }) => authMiddleware({ req }),
+  context: ({ req }) => {
+    // Bypassing JWT authentication for now
+    return { user: null };
+  },
   uploads: { maxFieldSize: 10000000,}
 });
 
