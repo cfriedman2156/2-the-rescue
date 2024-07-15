@@ -67,10 +67,15 @@ body {
 }
 
 .quiz-box {
-  height: 32rem;
-  width: 80rem;
+  min-height: 38rem;
+  width: 90rem;
 }
 
 .w-visit {
   width: 35rem;
+}
+
+.fixed-button {
+  position: absolute;
+  bottom: 2.5rem;
 }

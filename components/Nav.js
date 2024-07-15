@@ -142,7 +142,7 @@ export default function Nav() {
                                 </div>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><a href="/Donate">Donate</a></li>
-                                    <li><a href="#">Sponsor an Animal</a></li>
+                                    <li><a href="/Sponsor">Sponsor an Animal</a></li>
                                     <li><a href="/Visit">Visit</a></li>
                                     <li><a href="/Volunteer">Volunteer</a></li>
                                     <li><a href="/Adopt">Adopt</a></li>
@@ -153,7 +153,7 @@ export default function Nav() {
                             <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Shop">Shop</a>
                         </li>
                         <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Contact</a>
+                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Contact">Contact</a>
                         </li>
                     </ul>
                     <button id="navAction" href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">

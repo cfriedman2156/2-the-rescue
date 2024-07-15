@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Other-Friends/[name]": "pages/Other-Friends/[name].js",
-  "/Other-Friends": "pages/Other-Friends.js",
-  "/Admin": "pages/Admin.js",
-  "/api/graphql": "pages/api/graphql.js"
+  "/Donate": "pages/Donate.js",
+  "/Sponsor": "pages/Sponsor.js",
+  "/Contact": "pages/Contact.js"
 }

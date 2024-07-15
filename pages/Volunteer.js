@@ -67,11 +67,18 @@ export default function Volunteer() {
                                 Please email the signed waiver to 2therescueanimalsanctuary@gmail.com, or bring a printed copy to your scheduled visit.
                             </p>
                             <a
-                                href="/2therescue-liability-waiver.pdf" // Replace with your actual file path in the public directory
-                                download="2therescue-liability-waiver.pdf" // Rename the downloaded file if needed
-                                className="btn btn-primary text-lg"
+                                href="/(18+)-Liability-Waiver.pdf" // Replace with your actual file path in the public directory
+                                download="(18+)-Liability-Waiver.pdf" // Rename the downloaded file if needed
+                                className="btn btn-primary text-lg mx-2"
                             >
-                                Download Liability Waiver
+                                Download Liability Waiver (18+)
+                            </a>
+                            <a
+                                href="/(Minor)-Liability-Waiver.pdf" // Replace with your actual file path in the public directory
+                                download="(Minor)-Liability-Waiver.pdf" // Rename the downloaded file if needed
+                                className="btn btn-primary text-lg mx-2"
+                            >
+                                Download Liability Waiver (Minor)
                             </a></div>
                         <div className="w-5/6  p-6">
                             <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">

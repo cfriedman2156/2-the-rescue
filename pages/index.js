@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import Nav from '../components/Nav';
 import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -145,9 +146,11 @@ export default function Home() {
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
                 <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    View All
-                  </button>
+                  <Link href='/Animals'>
+                    <button href='/Animals' className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                      View All
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -158,8 +161,8 @@ export default function Home() {
                   <h3 className="w-full font-bold text-center mt-2 text-4xl text-gray-800 px-6">
                     Personality Quiz
                   </h3>
-                  <div className="card gradient-light  m-6">
-                    <div className="card-body ">
+                  <div className="card gradient m-6">
+                    <div className="card-body rounded-xl">
                       <p className="text-gray-800 text-center text-xl m-2">
                         Answer questions about yourself to find out which animal at the sanctuary is most like you!
                       </p>
@@ -172,9 +175,11 @@ export default function Home() {
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
                 <div className="flex items-center justify-center">
+                <Link href='/Quiz'>
                   <button className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     Quiz Me!
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -189,9 +194,11 @@ export default function Home() {
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
                 <div className="flex items-center justify-center">
+                <Link href='/Volunteer'>
                   <button className="mx-auto lg:mx-0 hover:underline blue text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     More Info
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -26,7 +26,8 @@ function Adopt() {
 
                             <h1 className="my-4 text-5xl font-bold leading-tight">Adopting One of Our Animals</h1>
 
-                            <p className="leading-normal text-2xl mb-8">Below is the list of our animals</p>
+                            <p className="leading-normal text-2xl">Below is the list of our animals available for adoption</p>
+                            <p className="leading-normal text-2xl mb-8">To inquire about adopting one of our animals, please email us at <span className='font-bold'>2therescueanimalsanctuary@gmail.com</span></p>
                         </div>
 
                     </div>
@@ -48,8 +49,8 @@ function Adopt() {
                 </section>
         <section className="bg-white border-b py-8">
           <div className="container max-w-5xl mx-auto">
-            <h2 className="w-full my-2 text-6xl font-bold leading-tight text-center text-gray-800">
-              Our Horses
+            <h2 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
+              Available for Adoption
             </h2>
             <div className="w-full mb-4">
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
