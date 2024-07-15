@@ -79,7 +79,10 @@ export default function Donate() {
         <section className='pb-14'>
           <h2 className="w-full my-2 text-6xl font-bold leading-tight text-center text-white">
             Prefer <img src='/images/Venmo_Logo.svg.png' alt='Venmo Logo' className="inline-block h-9 pl-3" />?
-          </h2>
+          </h2>         
+          <div className='flex justify-center p-4'>
+            <img src='/images/venmoqr.jpg' className='h-64 rounded-2xl'/>
+          </div>
           <p className="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
             Venmo your donation to @donate2therescueanimalsanctuary
           </p>

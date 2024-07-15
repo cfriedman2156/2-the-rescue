@@ -4,23 +4,60 @@ import { quiz } from "@/components/quizData";
 import { useState } from "react";
 
 export default function Quiz() {
-    
-    const [ activeQuestion, setActiveQuestion ] = useState(0);
-    const [ selectedAnswer, setSelectedAnswer ] = useState('');
-    const [ checked, setChecked ] = useState(false);
-    const [ selectedAnswerIndex, setSelectedAnswerIndex ] = useState(null);
-    const [ showResult, setShowResult ] = useState(false);
-    const [ result, setResult ] = useState('');
-    
-    const { questions } = quiz;
-    const { question, answers } = questions[activeQuestion];
-    
+
+    const [activeQuestion, setActiveQuestion] = useState(0);
+    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+    const [checked, setChecked] = useState(false);
+    const [showResult, setShowResult] = useState(false);
+    const [points, setPoints] = useState({
+        Ferdie: 0,
+        Rocky: 0,
+        Brittle: 0,
+        Toby: 0,
+        Max: 0,
+        Fabio: 0,
+        Buckwheat: 0,
+        Hammy: 0,
+        Rusty: 0,
+    });
+
+    const { questions, results } = quiz;
+    const { question, answers, answersPoints } = questions[activeQuestion];
+
     const answerSelected = (answer, idx) => {
         setChecked(true);
         setSelectedAnswerIndex(idx);
-        //add functionality to make answer geared towards an animal
-    }
+        const newPoints = { ...points };
+        Object.keys(newPoints).forEach(character => {
+            newPoints[character] += answersPoints[idx][character];
+        });
+        setPoints(newPoints);
+    };
 
+    const nextQuestion = () => {
+        setSelectedAnswerIndex(null);
+        if (activeQuestion !== questions.length - 1) {
+            setActiveQuestion((prev) => prev + 1)
+        } else {
+            setShowResult(true);
+        }
+        setChecked(false);
+    };
+
+    const getResult = () => {
+        let maxPoints = 0;
+        let result = '';
+        Object.keys(points).forEach(character => {
+            if (points[character] > maxPoints) {
+                maxPoints = points[character];
+                result = character;
+            }
+        });
+        return result;
+    };
+
+    const resultCharacter = getResult();
+    const resultData = results[resultCharacter];
 
     return (
         <>
@@ -29,31 +66,83 @@ export default function Quiz() {
                 <section>
                     <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <div className=" w-full text-center">
-                            <h1 className="my-4 text-7xl font-bold leading-tight text-center">Personality Quiz</h1>
-                            <p className="text-4xl">Answer the questions below to see which animal at the sanctuary is most like you!</p>
+                            <h1 className="my-4 text-6xl font-bold leading-tight text-center">Personality Quiz</h1>
+                            <p className="text-3xl">Answer the questions below to see which animal at the sanctuary is most like you!</p>
                         </div>
                     </div>
                 </section>
                 <section className="flex flex-col items-center">
-                    <h1 className="text-4xl font-bold text-center pt-10">Question {activeQuestion + 1}/10</h1>
-                    <div className="bg-white px-20 pb-20 m-10 shadow-xl rounded-3xl text-black">
+                    {!showResult ? (
+                        <h1 className="text-4xl font-bold text-center pt-10">
+                            Question {activeQuestion + 1}/10
+                        </h1>
+                    ) : (
+                        <div className="text-center pt-10">
+                            <h1 className="text-4xl font-bold">
+                                Your result is: {resultCharacter}
+                            </h1>
+                        </div>
+                    )}
+                    <div className="bg-white px-20 pb-20 quiz-box m-10 shadow-xl rounded-3xl text-black relative">
                         {!showResult ? (
-                            <div className='quiz-container'>
+                            <div className='quiz-container '>
                                 <h3 className="text-center text-5xl font-semibold m-10">{questions[activeQuestion].question}</h3>
-                                <div className="flex wrap items-center justify-center"> 
+                                <div className="flex flex-wrap items-center justify-center">
                                     {answers.map((answer, idx) => (
-                                        <button 
-                                            key={idx} 
+                                        <button
+                                            key={idx}
                                             onClick={() => answerSelected(answer, idx)}
-                                            className="btn h-60 w-60 text-3xl m-4">
-                                                {answer}
-                                        </button>                                   
-                                ))}
+                                            className={`btn h-32 w-60 text-3xl m-4 ${selectedAnswerIndex === idx ? 'btn-primary' : ''}`}>
+                                            {answer}
+                                        </button>
+                                    ))}
+
+                                </div>
+                                <div className="flex mx-4 justify-center ">
+                                    {checked ? (
+                                        <button onClick={nextQuestion} className="fixed-button btn btn-primary w-40 h-20 mt-5 text-3xl">
+                                            {activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+                                        </button>
+                                    ) : (
+                                        <button className="fixed-button btn btn-disabled w-40 h-20 mt-5 text-3xl">
+                                            {activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
-                            ) : (
-                            <div className='quiz-container'></div>
-                            ) }
+                        ) : (
+                            <div className='quiz-container'>
+                                <h3 className="text-center text-5xl font-semibold m-10">The Results Are In!</h3>
+                                <div className="flex">
+                                    <div className="w-1/2 px-10 pt-5">
+                                        <img src={resultData.image} alt={resultCharacter} className="max-h-96 mx-auto mt-5 rounded-xl" />
+                                    </div>
+                                    <div className="w-1/2 px-10 pt-10">
+                                        <h3 className="text-4xl">
+                                            You matched with <span className="font-bold">{resultCharacter}!</span>
+                                        </h3>
+                                        <p className="text-2xl mt-5">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                        </p>
+
+
+                                    </div>
+
+                                </div>
+                                <div className="px-60 pt-10">
+                                    <p className="text-2xl mt-5 text-center font-semibold">
+                                        Your sponsorship will directly support {resultCharacter}. Every dollar contributes to providing food, shelter, and medical treatment,
+                                        ensuring {resultCharacter} will remain healthy and comfortable.
+                                    </p>
+                                    <div className="flex justify-center pt-5">
+                                        <button href="/Sponsor" className="mx-auto lg:mx-0  gradient font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                            <a href="/Sponsor" target="_blank" className='text-white text-3xl'>Sponsor {resultCharacter}</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        )}
                     </div>
                 </section>
                 <section className="pt-20 relative -mt-12 lg:-mt-24">
@@ -70,8 +159,10 @@ export default function Quiz() {
                         </g>
                     </svg>
                 </section>
+
+
             </main>
             <Footer />
         </>
-    )
+    );
 }

@@ -124,7 +124,7 @@ export default function HorseDetail() {
                             <h1 className="text-6xl font-bold text-center">{horse.name}</h1>
                             <div className='py-5 px-40 text-2xl'>
                                 <p className='my-2 font-bold'>Age: {horse.age}</p>
-                                <p className='font-bold'>{horse.adoption ? 'Available for Adoption' : 'Not Available for Adoption'}</p>
+                                <p className='font-bold'>{horse.adoption ? 'Available for Adoption' : 'Sanctuary Animal'}</p>
                                 <p className='mt-6 mb-6'>{horse.description}</p>
                             </div>
                             

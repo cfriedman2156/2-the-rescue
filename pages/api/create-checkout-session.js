@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         ],
         mode: 'payment',
         success_url: `${req.headers.origin}/Success`,
-        cancel_url: `${req.headers.origin}/Cancel`,
+        cancel_url: `${req.headers.origin}/Donate`,
       });
 
       res.status(200).json({ id: session.id });

@@ -113,3 +113,17 @@ export const GET_OTHER = gql`
     }
   }
 `;
+
+export const GET_ADOPTION_AVAILABLE = gql`
+  query GetAdoptionAvailable {
+    animalByAdoption(adoption: true) {
+      id
+      name
+      description
+      age
+      adoption
+      profileImage
+      photos
+    }
+  }
+`;

@@ -87,8 +87,12 @@ export default function Nav() {
         e.preventDefault();
     };
 
+    const redirectToAnimals = () => {
+        router.push('/Animals');
+    };
+
     return (
-        <nav id="header" className="fixed w-full z-30 top-0 text-white">
+        <nav id="header" className="fixed w-full z-40 top-0 text-white">
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-1">
                 <div className="pl-4 flex items-center">
                     <a className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
@@ -117,7 +121,7 @@ export default function Nav() {
                         </li>
                         <div className="dropdown dropdown-hover">
                             <li className="mr-3">
-                                <div role="button" className="inline-block m-1 text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Animals" onClick={handleDropdownClick}>
+                                <div role="button" className="inline-block m-1 text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" onClick={redirectToAnimals} onMouseOver={handleDropdownClick}>
                                     Animals
                                 </div>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -138,10 +142,10 @@ export default function Nav() {
                                 </div>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><a href="/Donate">Donate</a></li>
-                                    <li><a href="#">Sponsor an Animal</a></li>
-                                    <li><a href="#">Give Monthly</a></li>
-                                    <li><a href="#">Volunteer</a></li>
-                                    <li><a href="#">Adopt</a></li>
+                                    <li><a href="/Sponsor">Sponsor an Animal</a></li>
+                                    <li><a href="/Visit">Visit</a></li>
+                                    <li><a href="/Volunteer">Volunteer</a></li>
+                                    <li><a href="/Adopt">Adopt</a></li>
                                 </ul>
                             </li>
                         </div>
@@ -149,7 +153,7 @@ export default function Nav() {
                             <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Shop">Shop</a>
                         </li>
                         <li className="mr-3">
-                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Contact</a>
+                            <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Contact">Contact</a>
                         </li>
                     </ul>
                     <button id="navAction" href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">

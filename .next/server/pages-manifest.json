@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Donkeys": "pages/Donkeys.js",
-  "/Other-Friends": "pages/Other-Friends.js",
   "/Donate": "pages/Donate.js",
-  "/api/graphql": "pages/api/graphql.js",
-  "/Birds": "pages/Birds.js"
+  "/Sponsor": "pages/Sponsor.js",
+  "/Contact": "pages/Contact.js"
 }

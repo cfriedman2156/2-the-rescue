@@ -17,6 +17,7 @@ const typeDefs = gql`
     animals: [Animal]
     animal(id: ID!): Animal
     animalByName(name: String!): Animal
+    animalByAdoption(adoption: Boolean!): [Animal]
   }
 
   type Mutation {

@@ -16,16 +16,16 @@ export const ADD_ANIMAL = gql`
 `;
 
 export const EDIT_ANIMAL = gql`
-  mutation EditAnimal($id: ID!, $name: String, $description: String, $age: String, $profileImage: String, $photos: String $type: String) {
+  mutation EditAnimal($id: ID!, $name: String, $description: String, $age: String, $profileImage: String, $photos: [String], $type: String) {
     editAnimal(id: $id, name: $name, description: $description, age: $age, profileImage: $profileImage, photos: $photos, type: $type) {
-        id
-        name
-        description
-        age
-        adoption
-        profileImage
-        photos
-        type
+      id
+      name
+      description
+      age
+      adoption
+      profileImage
+      photos
+      type
     }
   }
 `;
