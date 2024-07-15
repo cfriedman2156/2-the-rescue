@@ -4,7 +4,7 @@ import DonateButton from '@/components/DonateButton';
 import { GET_ANIMALS } from '@/graphql/queries';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
-import { resultCharacter } from './Quiz';
+// import { resultCharacter } from './Quiz';
 
 export default function Donate() {
     const [selectedOption, setSelectedOption] = useState('once');
@@ -29,7 +29,7 @@ export default function Donate() {
             <Nav />
             <main className="pt-28 leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
                 <section className="container mx-auto px-2 pt-4 pb-12 text-gray-800">
-                    {!resultCharacter ? (
+                    {/* {!resultCharacter ? (
                         <h2 className="w-full my-2 text-7xl font-bold leading-tight text-center text-white">
                             Sponsor an Animal!
                         </h2>
@@ -37,8 +37,10 @@ export default function Donate() {
                         <h2 className="w-full my-2 text-7xl font-bold leading-tight text-center text-white">
                             Sponsor {resultCharacter}!
                         </h2>
-                    )}
-
+                    )} */}
+                    <h2 className="w-full my-2 text-7xl font-bold leading-tight text-center text-white">
+                            Sponsor an Animal!
+                        </h2>
                     <div className='text-center pb-6'>
                         <h3 className="my-4 mx-20 text-xl leading-tight text-white">
                             Your generous donations directly support the animals in our care. Every dollar contributes to providing food, shelter, and medical treatment, ensuring our animals remain healthy and comfortable.</h3>

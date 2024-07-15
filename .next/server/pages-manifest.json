@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Donate": "pages/Donate.js",
   "/Sponsor": "pages/Sponsor.js",
-  "/Contact": "pages/Contact.js"
+  "/Contact": "pages/Contact.js",
+  "/Donate": "pages/Donate.js"
 }
