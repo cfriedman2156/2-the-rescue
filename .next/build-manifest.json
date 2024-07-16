@@ -15,15 +15,15 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/Contact": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Contact.js"
+      "static/chunks/pages/index.js"
     ],
-    "/Donate": [
+    "/Before-and-After": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Donate.js"
+      "static/chunks/pages/Before-and-After.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
