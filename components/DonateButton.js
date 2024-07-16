@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
-const DonateButton = ({ amount }) => {
+const DonateButton = ({ amount, interval, animalName, disabled }) => {
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
@@ -16,7 +16,7 @@ const DonateButton = ({ amount }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ amount }), // send the amount in the request body
+      body: JSON.stringify({ amount, interval, animalName }), // send the amount, interval, and animalName in the request body
     });
 
     const session = await response.json();
@@ -36,8 +36,8 @@ const DonateButton = ({ amount }) => {
     <button
       role="link"
       onClick={handleClick}
-      disabled={loading}
-      className="bg-blue-500 text-white font-bold py-2 my-7 px-4 rounded"
+      disabled={loading || disabled}
+      className={`bg-blue-500 text-white font-bold py-2 my-7 px-4 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
     >
       {loading ? 'Processing...' : `Donate`}
     </button>

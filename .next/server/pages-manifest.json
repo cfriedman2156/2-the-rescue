@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Donate": "pages/Donate.js",
-  "/Sponsor": "pages/Sponsor.js",
-  "/Contact": "pages/Contact.js",
-  "/Shop": "pages/Shop.js"
+  "/Before-and-After": "pages/Before-and-After.js",
+  "/Quiz": "pages/Quiz.js",
+  "/": "pages/index.js"
 }

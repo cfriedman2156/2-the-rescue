@@ -66,6 +66,11 @@ body {
   height: 45rem;
 }
 
+.ba-img {
+  height: 28rem;
+  width: 28rem;
+}
+
 .quiz-box {
   min-height: 38rem;
   width: 90rem;

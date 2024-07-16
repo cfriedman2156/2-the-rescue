@@ -4,8 +4,12 @@ import DonateButton from '@/components/DonateButton';
 import { useState } from 'react';
 
 export default function Donate() {
-
   const [selectedOption, setSelectedOption] = useState('once');
+  const [customAmount, setCustomAmount] = useState('');
+
+  const handleInputChange = (e) => {
+    setCustomAmount(e.target.value);
+  };
 
   return (
     <>
@@ -46,32 +50,29 @@ export default function Donate() {
             </button>
           </div>
           <div className='pt-14 pb-12 flex justify-center flex-wrap'>
-            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
-              <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-4">$5</h2>
-                <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-                <DonateButton amount={500} />
+            {['500', '2500', '5000'].map(amount => (
+              <div key={amount} className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
+                <div className="py-8 text-center">
+                  <h2 className="text-5xl font-bold pb-4">${amount / 100}</h2>
+                  <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
+                  <DonateButton amount={amount} interval={selectedOption} />
+                </div>
               </div>
-            </div>
-            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
-              <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-4">$10</h2>
-                <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-                <DonateButton amount={1000} />
-              </div>
-            </div>
-            <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
-              <div className="py-8 text-center">
-                <h2 className="text-5xl font-bold pb-4">$25</h2>
-                <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-                <DonateButton amount={2500} />
-              </div>
-            </div>
+            ))}
             <div className="w-72 h-72 mx-2 py-7 px-8 rounded-3xl font-bold text-xl shadow-lg bg-white">
               <div className="py-8 text-center">
                 <h2 className="text-5xl font-bold pb-4">Custom</h2>
+                <label className="input input-bordered flex items-center gap-2">
+                  $
+                  <input
+                    type=""
+                    className="grow"
+                    value={customAmount}
+                    onChange={handleInputChange}
+                  />
+                </label>
                 <p>{selectedOption === 'once' ? 'One Time Donation' : 'Monthly Donation'}</p>
-                <DonateButton amount={500} />
+                <DonateButton amount={customAmount * 100} interval={selectedOption} />
               </div>
             </div>
           </div>
@@ -79,9 +80,9 @@ export default function Donate() {
         <section className='pb-14'>
           <h2 className="w-full my-2 text-6xl font-bold leading-tight text-center text-white">
             Prefer <img src='/images/Venmo_Logo.svg.png' alt='Venmo Logo' className="inline-block h-9 pl-3" />?
-          </h2>         
+          </h2>
           <div className='flex justify-center p-4'>
-            <img src='/images/venmoqr.jpg' className='h-64 rounded-2xl'/>
+            <img src='/images/venmoqr.jpg' className='h-64 rounded-2xl' />
           </div>
           <p className="w-full my-2 text-3xl font-bold leading-tight text-center text-white">
             Venmo your donation to @donate2therescueanimalsanctuary
@@ -106,74 +107,3 @@ export default function Donate() {
     </>
   )
 }
-
-
-
-
-
-{/* <div className="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
-            <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-lg bg-white mt-4 ">
-              <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                <div className="p-8 text-3xl font-bold text-center border-b-4">
-                  $5
-                </div>
-              </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-                <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Donate
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-lg bg-white mt-4">
-              <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                <div className="p-8 text-3xl font-bold text-center border-b-4">
-                  $10
-                </div>
-              </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-
-                <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Donate
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-lg bg-white mt-4">
-              <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                <div className="p-8 text-3xl font-bold text-center border-b-4">
-                  $25
-                </div>
-
-              </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-
-                <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Donate
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
-              <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                <div className="w-full p-8 text-3xl font-bold text-center">Custom</div>
-                <div className="h-1 w-full gradient my-0 py-0 rounded-t"></div>
-                <label className="mt-4 m-3 input input-bordered flex items-center gap-2">
-                  $
-                  <input type="text" className="grow" placeholder="50" />
-                </label>
-              </div>
-              <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-
-                <div className="flex items-center justify-center">
-                  <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Donate
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> */}
