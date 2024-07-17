@@ -102,7 +102,7 @@ export default function EmailTemplate() {
                         Message
                     </label>
                     <textarea
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded mb-6 py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        className="min-h-48 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded mb-6 py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="message"
                         name="message"
                         placeholder="Your Message"
