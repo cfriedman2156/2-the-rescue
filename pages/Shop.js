@@ -11,22 +11,10 @@ export default function Visit() {
             <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
                 <section className="pt-24">
                     <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                        <div className="w-visit sm:w-1/2 p-6">
-                            <div className="mt-10 carousel carousel-vertical rounded-box w-full h-96">
-                                <div className="carousel-item">
-                                    <img src="images/visit.jpg" alt="" className="h-full object-cover" />
-                                </div>
-                                <div className="carousel-item">
-                                    <img src="images/visit3.jpg" alt="" className="h-full object-cover" />
-                                </div>
-                                <div className="carousel-item">
-                                    <img src="images/visit2.jpg" alt="" className="h-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full md:w-1/2 text-center">
+                        
+                        <div className="w-full text-center">
 
-                            <h1 className="my-4 text-5xl font-bold leading-tight">Visit 2 The Rescue Animal Sanctuary!</h1>
+                            <h1 className="my-4 text-5xl font-bold leading-tight">Shop Coming Soon!</h1>
 
                             {/* <h1 className="my-4 text-4xl leading-tight">We are open to visits of all sizes upon appointment.</h1> */}
 
@@ -49,67 +37,7 @@ export default function Visit() {
                     </div>
 
                 </section>
-                <section id="about-section" className="bg-white border-b py-8">
-                    <div className="container max-w-5xl mx-auto m-8">
-                        <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                            Visiting Details
-                        </h2>
-                    </div>
-                    <div className="flex flex-wrap justify-center text-center">
-                        <div className="w-5/6  p-6">
-                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                How to Visit
-                            </h3>
-                            <p className="text-gray-600 text-xl text-center  ">
-                                We are open to people of all ages and sizes. Please fill out our liability waiver, and call to schedule an appointment. 
-                            </p>
-                            <p className="text-gray-600 text-xl text-center mb-4 ">
-                                Please email the signed waiver to 2therescueanimalsanctuary@gmail.com, or bring a printed copy to your scheduled visit.
-                            </p>
-                            <a
-                                href="/(18+)-Liability-Waiver.pdf" // Replace with your actual file path in the public directory
-                                download="(18+)-Liability-Waiver.pdf" // Rename the downloaded file if needed
-                                className="btn btn-primary text-lg mx-2"
-                            >
-                                Download Liability Waiver (18+)
-                            </a>
-                            <a
-                                href="/(Minor)-Liability-Waiver.pdf" // Replace with your actual file path in the public directory
-                                download="(Minor)-Liability-Waiver.pdf" // Rename the downloaded file if needed
-                                className="btn btn-primary text-lg mx-2"
-                            >
-                                Download Liability Waiver (Minor)
-                            </a>
-                        </div>
-                        <div className="w-5/6  p-6">
-                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                Arrival Details
-                            </h3>
-                            <p className="text-gray-600 text-xl text-center mb-4">
-                                We are located at{' '}
-                                <a
-                                    href="https://maps.app.goo.gl/5ra1YrNyP4nge3To8"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-primary"
-                                >
-                                    1830 Olive St, Ramona, CA 92065
-                                </a>
-                                . Upon arrival, please unfasten the chain to open the gate. After passing through, close the gate securely and reattach the chain to prevent any animals from escaping.
-                            </p>
-                        </div>
-                        <div className="w-5/6  p-6">
-                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                Events
-                            </h3>
-                            <p className="text-gray-600 text-xl text-center mb-4">
-                                We have regularly scheduled events, to attend
-                            </p>
-                        </div>
-
-                    </div>
-
-                </section>
+                
 
 
 

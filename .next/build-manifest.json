@@ -15,15 +15,15 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/Before-and-After": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/Before-and-After.js"
+    ],
+    "/Quiz": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Quiz.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

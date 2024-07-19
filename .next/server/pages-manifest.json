@@ -1,8 +1,9 @@
 {
+  "/api/send": "pages/api/send.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Before-and-After": "pages/Before-and-After.js",
+  "/": "pages/index.js",
   "/Quiz": "pages/Quiz.js",
-  "/": "pages/index.js"
+  "/Before-and-After": "pages/Before-and-After.js"
 }
