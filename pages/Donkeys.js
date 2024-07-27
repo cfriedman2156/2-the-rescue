@@ -6,11 +6,12 @@ import { useQuery } from '@apollo/client';
 import { GET_DONKEYS } from '../graphql/queries';
 import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
+import Loading from '@/components/Loading';
 
 function Donkeys() {
   const { loading, error, data } = useQuery(GET_DONKEYS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>Error: {error.message}</p>;
 
   // Ensure data and data.animalsType are defined
