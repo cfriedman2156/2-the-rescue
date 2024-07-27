@@ -2,6 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/Birds": "pages/Birds.js"
+  "/api/graphql": "pages/api/graphql.js",
+  "/Birds": "pages/Birds.js",
+  "/Other-Friends": "pages/Other-Friends.js",
+  "/Pigs": "pages/Pigs.js"
 }

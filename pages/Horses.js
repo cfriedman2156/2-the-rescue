@@ -6,11 +6,12 @@ import { useQuery } from '@apollo/client';
 import { GET_HORSES } from '../graphql/queries';
 import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
+import Loading from '@/components/Loading';
 
 function Horses() {
   const { loading, error, data } = useQuery(GET_HORSES);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>Error: {error.message}</p>;
 
   // Ensure data and data.animalsType are defined
@@ -50,7 +51,7 @@ function Horses() {
 
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="w-full sm:w-1/2">
+                <div className="mt-12 w-full sm:w-1/2">
                   <Link href={`/Horses/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6' alt={animal.name}></img>

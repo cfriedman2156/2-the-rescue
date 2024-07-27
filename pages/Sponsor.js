@@ -4,6 +4,7 @@ import DonateButton from '@/components/DonateButton';
 import { GET_ANIMALS } from '@/graphql/queries';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
+import Loading from '@/components/Loading';
 
 export default function Sponsor() {
   const [selectedOption, setSelectedOption] = useState('once');
@@ -16,7 +17,7 @@ export default function Sponsor() {
 
   const { loading, error, data } = useQuery(GET_ANIMALS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>Error: {error.message}</p>;
 
   const animals = data?.animals || [];

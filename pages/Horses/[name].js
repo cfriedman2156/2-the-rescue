@@ -4,6 +4,7 @@ import { GET_ANIMAL_BY_NAME } from '../../graphql/queries';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import React, { useState } from "react";
+import Loading from '@/components/Loading';
 
 export default function HorseDetail() {
     const router = useRouter();
@@ -16,7 +17,7 @@ export default function HorseDetail() {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading/>;
     if (error) return <p>Error: {error.message}</p>;
 
     const horse = data?.animalByName;

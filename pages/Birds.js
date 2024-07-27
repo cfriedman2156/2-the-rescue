@@ -6,11 +6,12 @@ import { useQuery } from '@apollo/client';
 import { GET_BIRDS } from '../graphql/queries';
 import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
+import Loading from '@/components/Loading';
 
 function Birds() {
   const { loading, error, data } = useQuery(GET_BIRDS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
   // Ensure data and data.animalsType are defined
@@ -19,12 +20,20 @@ function Birds() {
   return (
     <>
       <Nav />
-      <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>       
-        <AnimalsHero
-          title="Birds"
-          description="Our birds come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals."
-          VideoComponent={HorsesVideo}
-        />
+      <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
+        <section className="pt-24">
+          <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <div className="flex flex-col w-full md:w-1/2 justify-center items-center text-center md:text-left">
+              <h1 className="my-4 text-7xl font-bold leading-tight">Birds</h1>
+              <p className="leading-normal text-2xl mb-8">
+                Our horses come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals.
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 text-center p-10 rounded-xl">
+              <img className="rounded-xl" src="/images/chanel.webp" alt="Toby" />
+            </div>
+          </div>
+        </section>
         <section className="relative -mt-12 lg:-mt-24">
           <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -51,7 +60,7 @@ function Birds() {
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
                 <div className="w-full sm:w-1/2">
-                  <Link href={`/Donkeys/${animal.name}`}>
+                  <Link href={`/Birds/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6' alt={animal.name}></img>
                     </button>

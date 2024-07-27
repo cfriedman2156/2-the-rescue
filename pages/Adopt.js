@@ -4,11 +4,12 @@ import { useQuery } from '@apollo/client';
 import { GET_ADOPTION_AVAILABLE } from '../graphql/queries';
 import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
+import Loading from '@/components/Loading';
 
 function Adopt() {
   const { loading, error, data } = useQuery(GET_ADOPTION_AVAILABLE);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>Error: {error.message}</p>;
 
   // Ensure data and data.animalsType are defined
