@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Nav from '../components/Nav';
-import AnimalsHero from '../components/AnimalsHero';
-import HorsesVideo from '@/components/HorsesVideo';
 import { useQuery } from '@apollo/client';
 import { GET_BIRDS } from '../graphql/queries';
 import DonateFooter from '@/components/DonateFooter';
