@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_ANIMALS } from '@/graphql/queries';
 import { EDIT_ANIMAL } from '../graphql/mutations';
+import axios from 'axios';
 
 export default function EditAnimalModal() {
     const { data, refetch } = useQuery(GET_ANIMALS);
@@ -17,33 +18,54 @@ export default function EditAnimalModal() {
     });
     const [editAnimal] = useMutation(EDIT_ANIMAL);
 
+    // const handleChange = (event) => {
+    //     const { name, value, type, files } = event.target;
+    //     if (type === 'file') {
+    //         if (name === 'profileImage') {
+    //             const reader = new FileReader();
+    //             reader.onloadend = () => {
+    //                 setFormState({
+    //                     ...formState,
+    //                     profileImage: reader.result
+    //                 });
+    //             };
+    //             reader.readAsDataURL(files[0]);
+    //         } else if (name === 'photos') {
+    //             const readers = [];
+    //             for (let i = 0; i < files.length; i++) {
+    //                 readers.push(new Promise((resolve, reject) => {
+    //                     const reader = new FileReader();
+    //                     reader.onloadend = () => resolve(reader.result);
+    //                     reader.onerror = reject;
+    //                     reader.readAsDataURL(files[i]);
+    //                 }));
+    //             }
+    //             Promise.all(readers).then((results) => {
+    //                 setFormState(prevState => ({
+    //                     ...prevState,
+    //                     photos: [...prevState.photos, ...results]
+    //                 }));
+    //             });
+    //         }
+    //     } else {
+    //         setFormState({
+    //             ...formState,
+    //             [name]: value,
+    //         });
+    //     }
+    // };
     const handleChange = (event) => {
         const { name, value, type, files } = event.target;
         if (type === 'file') {
             if (name === 'profileImage') {
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                    setFormState({
-                        ...formState,
-                        profileImage: reader.result
-                    });
-                };
-                reader.readAsDataURL(files[0]);
+                setFormState({
+                    ...formState,
+                    profileImage: files[0]
+                });
             } else if (name === 'photos') {
-                const readers = [];
-                for (let i = 0; i < files.length; i++) {
-                    readers.push(new Promise((resolve, reject) => {
-                        const reader = new FileReader();
-                        reader.onloadend = () => resolve(reader.result);
-                        reader.onerror = reject;
-                        reader.readAsDataURL(files[i]);
-                    }));
-                }
-                Promise.all(readers).then((results) => {
-                    setFormState(prevState => ({
-                        ...prevState,
-                        photos: [...prevState.photos, ...results]
-                    }));
+                setFormState({
+                    ...formState,
+                    photos: [...formState.photos, ...Array.from(files)]
                 });
             }
         } else {
@@ -53,14 +75,56 @@ export default function EditAnimalModal() {
             });
         }
     };
+    
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const { adoption, ...rest } = formState;
+    //     await editAnimal({ variables: { ...rest, adoption: adoption === 'true' } });
+    //     alert('Animal edited successfully');
+    //     refetch();
+    // };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { adoption, ...rest } = formState;
-        await editAnimal({ variables: { ...rest, adoption: adoption === 'true' } });
-        alert('Animal edited successfully');
-        refetch();
+
+        const formData = new FormData();
+        if (formState.profileImage) {
+            formData.append('profileImage', formState.profileImage);
+        }
+        formState.photos.forEach((photo, index) => {
+            formData.append(`photos[${index}]`, photo);
+        });
+
+        try {
+            const uploadResponse = await axios.post('/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            const { profileImageUrl, photosUrls } = uploadResponse.data;
+
+            await editAnimal({
+                variables: {
+                    id: formState.id,
+                    name: formState.name,
+                    type: formState.type,
+                    age: formState.age,
+                    description: formState.description,
+                    adoption: formState.adoption === 'true',
+                    profileImage: profileImageUrl,
+                    photos: photosUrls,
+                },
+            });
+
+            alert('Animal edited successfully');
+            refetch();
+        } catch (error) {
+            console.error('Error uploading files:', error);
+            alert('Error editing animal');
+        }
     };
+    
 
     const handleEditClick = (animal) => {
         setFormState({

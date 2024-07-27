@@ -49,13 +49,13 @@ export default function Visit() {
                     </div>
 
                 </section>
-                <section id="about-section" className="bg-white border-b py-8">
+                <section id="about-section" className="bg-white border-b py-8 flex flex-col items-center">
                     <div className="container max-w-5xl mx-auto m-8">
                         <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                             Visiting Details
                         </h2>
                     </div>
-                    <div className="flex flex-wrap justify-center text-center">
+                    <div className="flex flex-wrap justify-center text-center w-visit1">
                         <div className="w-5/6  p-6">
                             <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
                                 How to Visit
@@ -103,7 +103,7 @@ export default function Visit() {
                                 Events
                             </h3>
                             <p className="text-gray-600 text-xl text-center mb-4">
-                                We have regularly scheduled events, to attend
+                                We periodically have scheduled events, such as painting parties and yoga with the animals. To see upcoming events, follow us on <a href='https://www.facebook.com/RescueAnimalSanctuary/' target='_blank' className="text-primary">facebook</a>.
                             </p>
                         </div>
 

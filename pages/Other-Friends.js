@@ -19,7 +19,7 @@ function OtherFriends() {
   return (
     <>
       <Nav />
-      <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>       
+      <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
         <AnimalsHero
           title="Other Friends"
           description="Our other friends come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals."

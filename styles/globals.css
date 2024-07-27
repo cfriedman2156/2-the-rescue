@@ -80,7 +80,29 @@ body {
   width: 35rem;
 }
 
+.w-visit1 {
+  width: 55rem;
+}
+
 .fixed-button {
   position: absolute;
   bottom: 2.5rem;
+}
+
+.h-animal-image {
+  min-height: 25rem;
+}
+
+.back-button {
+  top: 0rem;
+  left: 0rem;
+}
+
+.forward-button {
+  top: 0rem;
+  right: -1rem
+}
+
+.dots {
+  bottom: -1.5rem;
 }

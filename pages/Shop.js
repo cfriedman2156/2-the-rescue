@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 
 
-export default function Visit() {
+export default function Shop() {
     return (
         <>
             <Nav />
@@ -12,9 +12,9 @@ export default function Visit() {
                 <section className="pt-24">
                     <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         
-                        <div className="w-full text-center">
+                        <div className="w-full text-center h-96">
 
-                            <h1 className="my-4 text-5xl font-bold leading-tight">Shop Coming Soon!</h1>
+                            <h1 className="my-8 text-5xl font-bold leading-tight">Shop Coming Soon!</h1>
 
                             {/* <h1 className="my-4 text-4xl leading-tight">We are open to visits of all sizes upon appointment.</h1> */}
 
@@ -44,7 +44,7 @@ export default function Visit() {
 
 
 
-                <DonateFooter />
+
                 <Footer />
             </main>
         </>

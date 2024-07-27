@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ANIMAL } from '../graphql/mutations';
+import axios from 'axios';
 
 export default function AddAnimal() {
     const [formState, setFormState] = useState({
@@ -18,29 +19,14 @@ export default function AddAnimal() {
         const { name, value, type, files } = event.target;
         if (type === 'file') {
             if (name === 'profileImage') {
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                    setFormState({
-                        ...formState,
-                        profileImage: reader.result
-                    });
-                };
-                reader.readAsDataURL(files[0]);
+                setFormState({
+                    ...formState,
+                    profileImage: files[0]
+                });
             } else if (name === 'photos') {
-                const readers = [];
-                for (let i = 0; i < files.length; i++) {
-                    readers.push(new Promise((resolve, reject) => {
-                        const reader = new FileReader();
-                        reader.onloadend = () => resolve(reader.result);
-                        reader.onerror = reject;
-                        reader.readAsDataURL(files[i]);
-                    }));
-                }
-                Promise.all(readers).then((results) => {
-                    setFormState({
-                        ...formState,
-                        photos: results
-                    });
+                setFormState({
+                    ...formState,
+                    photos: [...formState.photos, ...Array.from(files)]
                 });
             }
         } else {
@@ -53,9 +39,43 @@ export default function AddAnimal() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { adoption, ...rest } = formState;
-        await addAnimal({ variables: { ...rest, adoption: adoption === 'true' } });
-        alert('animal added successfully')
+
+        const formData = new FormData();
+        if (formState.profileImage) {
+            formData.append('profileImage', formState.profileImage);
+        }
+        formState.photos.forEach(photo => {
+            formData.append('photos', photo);
+        });
+
+        try {
+            const uploadResponse = await axios.post('/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            const { profileImageUrl, photosUrls } = uploadResponse.data;
+
+            console.log('Upload Response:', uploadResponse.data);
+
+            await addAnimal({
+                variables: {
+                    name: formState.name,
+                    type: formState.type,
+                    age: formState.age,
+                    description: formState.description,
+                    adoption: formState.adoption === 'true',
+                    profileImage: profileImageUrl,
+                    photos: photosUrls,
+                },
+            });
+
+            alert('Animal added successfully');
+        } catch (error) {
+            console.error('Error uploading files:', error);
+            alert('Error adding animal');
+        }
     };
 
     return (

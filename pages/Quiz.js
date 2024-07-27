@@ -130,15 +130,16 @@ export default function Quiz() {
 
                                 </div>
                                 <div className="px-60 pt-10">
-                                    <p className="text-2xl mt-5 text-center font-semibold">
-                                        Your sponsorship will directly support {resultCharacter}. Every dollar contributes to providing food, shelter, and medical treatment,
-                                        ensuring {resultCharacter} will remain healthy and comfortable.
-                                    </p>
                                     <div className="flex justify-center pt-5">
                                         <button href="/Sponsor" className="mx-auto lg:mx-0  gradient font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                             <a href="/Sponsor" target="_blank" className='text-white text-3xl'>Sponsor {resultCharacter}</a>
                                         </button>
                                     </div>
+                                    <p className="text-2xl mt-5 text-center font-semibold">
+                                        Your sponsorship will directly support {resultCharacter}. Every dollar contributes to providing food, shelter, and medical treatment,
+                                        ensuring {resultCharacter} will remain healthy and comfortable.
+                                    </p>
+                                    
                                 </div>
                             </div>
 
