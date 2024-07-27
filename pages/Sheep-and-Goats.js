@@ -6,6 +6,13 @@ import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
 import Loading from '@/components/Loading';
 
+const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) {
+    return text;
+  }
+  return text.substring(0, maxLength) + '...';
+};
+
 function SheepAndGoats() {
   const { loading, error, data } = useQuery(GET_SHEEP);
 
@@ -55,20 +62,22 @@ function SheepAndGoats() {
 
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="w-full sm:w-1/2">
+                <div className="w-full sm:w-1/2 flex justify-center">
                   <Link href={`/Sheep-and-Goats/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                      <img src={animal.profileImage} className='rounded-xl mt-6' alt={animal.name}></img>
+                      <img src={animal.profileImage} className='rounded-xl mt-6 max-h-96' alt={animal.name}></img>
                     </button>
                   </Link>
                 </div>
                 <div className="w-full sm:w-1/2 p-6 mt-6">
                   <div className="align-middle">
-                    <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3">
-                      {animal.name}
-                    </h3>
+                  <Link href={`/Sheep-and-Goats/${animal.name}`}>
+                      <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        {animal.name}
+                      </h3>
+                    </Link>
                     <p className="text-gray-600 my-4">
-                      {animal.description}
+                      {truncateText(animal.description, 350)}
                     </p>
                   </div>
                 </div>
