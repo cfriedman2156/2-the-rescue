@@ -53,9 +53,6 @@ export default function Home() {
                     <img src="images/charlie.webp" alt="" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/hammy.webp" alt="" className="h-full object-cover" />
-                  </div>
-                  <div className="carousel-item">
                     <img src="images/peter.webp" alt="" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">

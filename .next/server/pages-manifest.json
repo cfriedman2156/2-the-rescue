@@ -1,9 +1,7 @@
 {
-  "/api/send": "pages/api/send.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/Quiz": "pages/Quiz.js",
-  "/Before-and-After": "pages/Before-and-After.js"
+  "/Birds": "pages/Birds.js"
 }

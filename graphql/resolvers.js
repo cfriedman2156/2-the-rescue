@@ -1,4 +1,5 @@
 import Animal from './models/Animal';
+import { uploadFile } from '../lib/aws';
 
 const resolvers = {
   Query: {
@@ -9,13 +10,30 @@ const resolvers = {
     animalByAdoption: async (_, { adoption }) => await Animal.find({ adoption })
   },
   Mutation: {
+    // addAnimal: async (_, { name, description, age, adoption, profileImage, photos, type }) => {
+    //   const newAnimal = new Animal({ name, description, age, adoption, profileImage, photos, type });
+    //   return await newAnimal.save();
+    // },
+    // editAnimal: async (_, { id, name, description, age, adoption, profileImage, photos, type }) => {
+    //   const updateFields = { name, description, age, adoption, profileImage, photos, type };
+    //   Object.keys(updateFields).forEach((key) => updateFields[key] === undefined && delete updateFields[key]);
+    //   return await Animal.findByIdAndUpdate(id, updateFields, { new: true });
+    // },
     addAnimal: async (_, { name, description, age, adoption, profileImage, photos, type }) => {
       const newAnimal = new Animal({ name, description, age, adoption, profileImage, photos, type });
       return await newAnimal.save();
     },
     editAnimal: async (_, { id, name, description, age, adoption, profileImage, photos, type }) => {
-      const updateFields = { name, description, age, adoption, profileImage, photos, type };
-      Object.keys(updateFields).forEach((key) => updateFields[key] === undefined && delete updateFields[key]);
+      const updateFields = { name, description, age, adoption, type };
+
+      if (profileImage) {
+        updateFields.profileImage = await uploadFile(profileImage);
+      }
+      
+      if (photos) {
+        updateFields.photos = await Promise.all(photos.map(photo => uploadFile(photo)));
+      }
+
       return await Animal.findByIdAndUpdate(id, updateFields, { new: true });
     },
     deleteAnimal: async (_, { id }) => {

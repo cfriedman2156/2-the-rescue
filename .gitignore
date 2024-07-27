@@ -1,2 +1,6 @@
-node_modules
-node_modules
+# Environment variable files
+.env
+.env.local
+
+# Node modules
+node_modules/
