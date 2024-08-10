@@ -31,7 +31,8 @@ function Birds() {
             <div className="flex flex-col w-full md:w-1/2 justify-center items-center text-center md:text-left">
               <h1 className="my-4 text-7xl font-bold leading-tight">Birds</h1>
               <p className="leading-normal text-2xl mb-8">
-                Our horses come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals.
+                Our birds come from various rescue situations, including partnerships with animal control and individual rescues. We have chickens, pheasants, and peacocks, all receiving tailored diets. Ducks enjoy salads with lettuce, cucumber, peas, mealworms, and occasional fruit treats. Chickens receive customized salads twice a day, including fresh corn, blueberries, spinach, and more.
+                Our birds live in specialized enclosures, from a handcrafted aviary for pigeons to secure coops for chickens and a duck pond cleaned daily. Each bird enjoys a safe and enriching environment suited to their needs.
               </p>
             </div>
             <div className="w-full md:w-1/2 text-center p-10 rounded-xl">

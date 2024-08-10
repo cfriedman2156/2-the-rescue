@@ -61,7 +61,7 @@ export default function Visit() {
                                 How to Visit
                             </h3>
                             <p className="text-gray-600 text-xl text-center  ">
-                                We are open to people of all ages and sizes. Please fill out our liability waiver, and call to schedule an appointment. 
+                                We are open to people of all ages and sizes. Please fill out our liability waiver, and call to schedule an appointment for a visit or a tour. 
                             </p>
                             <p className="text-gray-600 text-xl text-center mb-4 ">
                                 Please email the signed waiver to 2therescueanimalsanctuary@gmail.com, or bring a printed copy to your scheduled visit.
@@ -100,10 +100,18 @@ export default function Visit() {
                         </div>
                         <div className="w-5/6  p-6">
                             <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
+                                Attire
+                            </h3>
+                            <p className="text-gray-600 text-xl text-center mb-4">
+                                When visiting us please wear closed toed shoes, bring drinking water, sunscreen and a hat.
+                            </p>
+                        </div>
+                        <div className="w-5/6  p-6">
+                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
                                 Events
                             </h3>
                             <p className="text-gray-600 text-xl text-center mb-4">
-                                We periodically have scheduled events, such as painting parties and yoga with the animals. To see upcoming events, follow us on <a href='https://www.facebook.com/RescueAnimalSanctuary/' target='_blank' className="text-primary">facebook</a>.
+                                We periodically have scheduled events, such as "sip and paint" parties and yoga with the animals. To see upcoming events, follow us on <a href='https://www.facebook.com/RescueAnimalSanctuary/' target='_blank' className="text-primary">facebook</a>.
                             </p>
                         </div>
 

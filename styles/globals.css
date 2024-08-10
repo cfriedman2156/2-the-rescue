@@ -18,18 +18,22 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .gradient {
   /* background: #9adce0; */
   background: linear-gradient(90deg, #3cc4c4 0%, #9adce0 100%);
+}
+
+.gradient-footer {
+  background: 
+    linear-gradient(180deg, #ffffff 1%, rgba(255, 255, 255, 0) 50%), /* Vertical fade to white */
+    linear-gradient(90deg, #3cc4c4 0%, #9adce0 100%); /* Horizontal gradient from left to right */
+  background-blend-mode: screen; /* Adjust blend mode to achieve the desired effect */
 }
 
 .blue {
@@ -40,6 +44,9 @@ body {
   font-size: 2.5rem;
 }
 
+.fa-4xl {
+  font-size: 3.5rem;
+}
 .h-101 {
   height: 30rem;
 }
@@ -76,6 +83,10 @@ body {
   width: 90rem;
 }
 
+.quiz-box-small {
+  min-height: 34rem;
+}
+
 .w-visit {
   width: 35rem;
 }
@@ -105,4 +116,17 @@ body {
 
 .dots {
   bottom: -1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Targeting iPhone screen sizes and similar */
+  .description {
+    display: none;
+  }
+}
+
+.difference-image {
+  height: 20rem;
+  width: 40rem;
+  object-fit: cover;
 }

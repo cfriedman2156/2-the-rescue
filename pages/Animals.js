@@ -7,9 +7,12 @@ import Footer from '@/components/Footer';
 
 export default function Animals() {
     return (
-        <>           
+        <>
             <Nav />
-            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>              
+            <main
+                className="leading-normal tracking-normal text-white gradient"
+                style={{ fontFamily: "'Source Sans Pro', sans-serif" }}
+            >
                 <AnimalsHero
                     title="Our Animals"
                     description="We rescue many types of animals from horses to ducks and everything in between! They come from a variety of places including auctions, owner relinquishments, and animal control."
@@ -30,75 +33,75 @@ export default function Animals() {
                     </svg>
                 </section>
                 <section className="bg-white border-b py-8">
-                    <div className="container max-w-5xl mx-auto">
-                        <h2 className="w-full my-2 text-6xl font-bold leading-tight text-center text-gray-800">
+                    <div className="container max-w-5xl mx-auto px-4">
+                        <h2 className="w-full my-2 text-4xl md:text-6xl font-bold leading-tight text-center text-gray-800">
                             View Our Animals
                         </h2>
                         <div className="w-full mb-4">
-                            <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                            <div className="h-1 mx-auto gradient w-32 md:w-64 opacity-25 my-0 py-0 rounded-t"></div>
                         </div>
-                        <div className="flex flex-wrap">
-                            <div className="w-5/6 sm:w-1/2 p-6">
-                                <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                    Horses
-                                </h3>
+                        <div className="flex flex-wrap justify-center">
+                            <div className="w-full sm:w-1/2 p-4">
                                 <Link href="/Horses">
-                                    <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                                        <img src='images/tucker.webp' className='rounded-xl mt-6'></img>
+                                    <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
+                                        Horses
+                                    </h3>
+                                    <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                                        <img src='images/tucker.webp' className='rounded-xl mt-6 mx-auto'></img>
                                     </button>
                                 </Link>
                             </div>
-                            <div className="w-full sm:w-1/2 p-6">
-                                <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                    Donkeys and Mules
-                                </h3>
+                            <div className="w-full sm:w-1/2 p-4">
                                 <Link href="/Donkeys">
-                                    <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                                        <img src='images/faith.webp' className='rounded-xl mt-6'></img>
+                                    <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
+                                        Donkeys and Mules
+                                    </h3>
+                                    <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                                        <img src='images/faith.webp' className='rounded-xl mt-6 mx-auto'></img>
                                     </button>
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex flex-wrap">
-                            <div className="w-5/6 sm:w-1/2 p-6">
-                                <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                    Birds
-                                </h3>
+                        <div className="flex flex-wrap justify-center">
+                            <div className="w-full sm:w-1/2 p-4">
                                 <Link href="/Birds">
-                                    <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                                        <img src='images/quacky.webp' className='rounded-xl mt-6'></img>
+                                    <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
+                                        Birds
+                                    </h3>
+                                    <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                                        <img src='images/quacky.webp' className='rounded-xl mt-6 mx-auto'></img>
                                     </button>
                                 </Link>
                             </div>
-                            <div className="w-full sm:w-1/2 p-6">
-                                <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                    Sheep and Goats
-                                </h3>
+                            <div className="w-full sm:w-1/2 p-4">
                                 <Link href="/Sheep-and-Goats">
-                                    <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                                        <img src='images/brittle.webp' className='rounded-xl mt-6'></img>
+                                    <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
+                                        Sheep and Goats
+                                    </h3>
+                                    <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                                        <img src='images/brittle.webp' className='rounded-xl mt-6 mx-auto'></img>
                                     </button>
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex flex-wrap">
-                            <div className="w-5/6 sm:w-1/2 p-6">
-                                <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                    Pigs
-                                </h3>
+                        <div className="flex flex-wrap justify-center">
+                            <div className="w-full sm:w-1/2 p-4">
                                 <Link href="/Pigs">
-                                    <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                                        <img src='images/hammy.webp' className='rounded-xl mt-6'></img>
+                                    <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
+                                        Pigs
+                                    </h3>
+                                    <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                                        <img src='images/hammy.webp' className='rounded-xl mt-6 mx-auto'></img>
                                     </button>
                                 </Link>
                             </div>
-                            <div className="w-full sm:w-1/2 p-6">
-                                <h3 className="text-5xl text-center text-gray-800 font-bold leading-none mb-3 ">
-                                    Other Friends
-                                </h3>
+                            <div className="w-full sm:w-1/2 p-4">
                                 <Link href="/Other-Friends">
-                                    <button className=' focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                                        <img src='images/toby.webp' className='rounded-xl mt-6'></img>
+                                    <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
+                                        Other Friends
+                                    </h3>
+                                    <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
+                                        <img src='images/toby.webp' className='rounded-xl mt-6 mx-auto'></img>
                                     </button>
                                 </Link>
                             </div>

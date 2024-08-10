@@ -31,7 +31,8 @@ function Pigs() {
             <div className="flex flex-col w-full md:w-1/2 justify-center items-center text-center md:text-left">
               <h1 className="my-4 text-7xl font-bold leading-tight">Pigs</h1>
               <p className="leading-normal text-2xl mb-8">
-                Our horses come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals.
+                Our pigs come from various backgrounds, often rescued from neglectful situations or saved from euthanasia. We provide them with a balanced diet tailored to their needs, ensuring they receive proper nutrition and care. Pigs are social and intelligent animals, and we offer them plenty of space to roam, root, and play in a safe and enriching environment.
+                Our dedicated team of caretakers ensures each pig receives regular veterinary check-ups, as well as plenty of love and attention. Your support helps us continue to provide a happy and healthy life for these wonderful animals.
               </p>
             </div>
             <div className="w-full md:w-1/2 text-center p-10 rounded-xl">
@@ -64,7 +65,7 @@ function Pigs() {
 
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="w-full sm:w-1/2 flex justify-center">
+                <div className="md:mt-12 w-full sm:w-1/2 flex justify-center">
                   <Link href={`/Pigs/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6 max-h-96' alt={animal.name}></img>
@@ -78,7 +79,7 @@ function Pigs() {
                         {animal.name}
                       </h3>
                     </Link>
-                    <p className="text-gray-600 my-4">
+                    <p className="text-gray-600 my-4 description">
                       {truncateText(animal.description, 350)}
                     </p>
                   </div>

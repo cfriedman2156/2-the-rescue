@@ -32,11 +32,11 @@ export default function Visit() {
                             </div>
                             <div className="mt-10 ml-7 rounded-xl diff aspect-[9/12] ba-img">
                                 <div className="diff-item-1">
-                                    <img alt="Prince Before" src="/images/princeafter.jpeg" />
+                                    <img alt="Prince after" src="/images/princeafter.webp" />
                                 </div>
                                 <div className="diff-item-2">
                                     <img
-                                        alt="Prince after"
+                                        alt="Prince before"
                                         src="/images/princebefore.jpeg" />
                                 </div>
                                 <div className="diff-resizer"></div>

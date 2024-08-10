@@ -15,12 +15,12 @@ export default function Contact() {
                         </h2>
                     </div>
                     <div className="flex justify-center">
-                        <div className="mx-60 flex flex-wrap bg-white rounded-2xl h-auto w-full justify-center text-center p-6">
+                        <div className="mx-2 md:mx-60 flex flex-wrap bg-white rounded-2xl h-auto w-full justify-center text-center p-6">
                             <EmailTemplate />
                         </div>
                     </div>
                 </section>
-                <DonateFooter />
+                {/* <DonateFooter /> */}
                 <Footer />
             </main>
         </>

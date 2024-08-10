@@ -75,7 +75,7 @@ export default function EditAnimalModal() {
             });
         }
     };
-    
+
 
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
@@ -124,7 +124,7 @@ export default function EditAnimalModal() {
             alert('Error editing animal');
         }
     };
-    
+
 
     const handleEditClick = (animal) => {
         setFormState({
@@ -145,9 +145,11 @@ export default function EditAnimalModal() {
             {/* <button onClick={() => document.getElementById('edit_animal_modal').showModal()} className='btn w-80 text-2xl h-40 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                 Edit Animal
             </button> */}
-            <div className="text-black text-xl">
+
+            <div className="text-white text-xl text-center">
+                <h1 className='text-5xl font-bold pb-4'>Edit Animal</h1>
                 {data?.animals.map(animal => (
-                    <div key={animal.id} className="">
+                    <div key={animal.id} className=" font-semibold">
                         <span>{animal.name}</span>
                         <button className="btn btn-primary m-2" onClick={() => handleEditClick(animal)}>Edit</button>
                     </div>
@@ -216,7 +218,7 @@ export default function EditAnimalModal() {
                     <button>close</button>
                 </form>
             </dialog>
-            
+
         </>
     );
 }

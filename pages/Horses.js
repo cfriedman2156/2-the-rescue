@@ -21,7 +21,6 @@ function Horses() {
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
-  // Ensure data and data.animalsType are defined
   const animals = data?.animalsType || [];
 
   return (
@@ -30,7 +29,7 @@ function Horses() {
         <Nav />
         <AnimalsHero
           title="Horses"
-          description="Our horses come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals."
+          description="Our horses come from various backgrounds, including rescues from neglect, abuse, and slaughter auctions. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals."
           VideoComponent={HorsesVideo}
         />
         <section className="relative -mt-12 lg:-mt-24">
@@ -55,13 +54,12 @@ function Horses() {
             <div className="w-full mb-4">
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="mt-12 w-full sm:w-1/2 flex justify-center">
+                <div className="md:mt-12 w-full sm:w-1/2 flex justify-center">
                   <Link href={`/Horses/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out justify-center'>
-                      <img src={animal.profileImage} className='rounded-xl mt-6 max-h-96 ' alt={animal.name}></img>
+                      <img src={animal.profileImage} className='rounded-xl md:mt-6 max-h-96 ' alt={animal.name}></img>
                     </button>
                   </Link>
                 </div>
@@ -72,7 +70,7 @@ function Horses() {
                         {animal.name}
                       </h3>
                     </Link>
-                    <p className="text-gray-600 my-4">
+                    <p className="text-gray-600 my-4 description">
                       {truncateText(animal.description, 350)}
                     </p>
                   </div>
