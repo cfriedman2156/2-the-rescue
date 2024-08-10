@@ -36,8 +36,8 @@ export default function PigDetail() {
             <Nav />
             <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>         
                 <section className='pt-24 flex justify-center'>
-                    <div id="default-carousel" className="relative px-10 w-1/2" data-carousel="slide">
-                        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <div id="default-carousel" className="relative px-10 w-1/2 " data-carousel="slide">
+                        <div className="relative h-56 overflow-hidden rounded-xl h-animal-image">
                             {slides.map((slide, index) => (
                                 <div
                                     key={index}
@@ -46,13 +46,13 @@ export default function PigDetail() {
                                 >
                                     <img
                                         src={slide}
-                                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                        className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-xl"
                                         alt={`Slide ${index + 1}`}
                                     />
                                 </div>
                             ))}
                         </div>
-                        <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                        <div className="absolute dots z-30 flex -translate-x-1/2 left-1/2 space-x-3 rtl:space-x-reverse">
                             {slides.map((_, index) => (
                                 <button
                                     key={index}
@@ -67,7 +67,7 @@ export default function PigDetail() {
                         </div>
                         <button
                             type="button"
-                            className="absolute top-0 start-12 z-30 flex items-center justify-center h-full px- cursor-pointer group focus:outline-none"
+                            className="absolute back-button z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none"
                             onClick={prevSlide}
                             data-carousel-prev
                         >
@@ -92,7 +92,7 @@ export default function PigDetail() {
                         </button>
                         <button
                             type="button"
-                            className="absolute top-0 end-8 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            className="absolute forward-button z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                             onClick={nextSlide}
                             data-carousel-next
                         >

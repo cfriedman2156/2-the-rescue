@@ -31,7 +31,8 @@ function OtherFriends() {
             <div className="flex flex-col w-full md:w-1/2 justify-center items-center text-center md:text-left">
               <h1 className="my-4 text-7xl font-bold leading-tight">Other Friends</h1>
               <p className="leading-normal text-2xl mb-8">
-                Our horses come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals.
+                Our sanctuary is home to a diverse group of animals, including dogs, tortoises, alpacas, and cows. Each of these animals comes from unique circumstances, and we provide them with the specialized care they need to thrive. From the playful energy of our dogs to the calm presence of our tortoise, every animal is given a safe and nurturing environment.
+                We tailor our care to meet the specific needs of each species, ensuring they receive the appropriate diet, medical attention, and space to live happily. Your support helps us continue to provide a loving home for these remarkable animals.
               </p>
             </div>
             <div className="w-full md:w-1/2 text-center p-10 rounded-xl">
@@ -63,7 +64,7 @@ function OtherFriends() {
             </div>
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="w-full sm:w-1/2 flex justify-center">
+                <div className="md:mt-12 w-full sm:w-1/2 flex justify-center">
                   <Link href={`/Other-Friends/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6 max-h-96' alt={animal.name}></img>
@@ -72,13 +73,13 @@ function OtherFriends() {
                 </div>
                 <div className="w-full sm:w-1/2 p-6 mt-6">
                   <div className="align-middle">
-                  <Link href={`/Other-Friends/${animal.name}`}>
+                    <Link href={`/Other-Friends/${animal.name}`}>
                       <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         {animal.name}
                       </h3>
                     </Link>
-                    <p className="text-gray-600 my-4">
-                    {truncateText(animal.description, 350)}
+                    <p className="text-gray-600 my-4 description">
+                      {truncateText(animal.description, 350)}
                     </p>
                   </div>
                 </div>

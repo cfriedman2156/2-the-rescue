@@ -30,10 +30,13 @@ function SheepAndGoats() {
           <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="flex flex-col w-full md:w-1/2 justify-center items-center text-center md:text-left">
               <h1 className="my-4 text-7xl font-bold leading-tight">Sheep and Goats</h1>
-              <p className="leading-normal text-2xl mb-8">Our horses come from various backgrounds, including rescues from neglect, abuse, and retirement from demanding careers. We provide a balanced diet tailored to their individual needs, ensuring they receive high-quality hay, grains, and essential supplements. Regular veterinary check-ups, dental care, and hoof maintenance are integral to their health. Our team of caretakers and volunteers ensures each horse gets the medical attention and daily care they need. Your support helps us continue offering a safe haven for these magnificent animals.</p>
+              <p className="leading-normal text-2xl mb-8">
+                Our goats and sheep, known as our sanctuary's hooligans, are always seeking adventure and mischief. Goats, in particular, will eat almost anything and need enclosed areas to protect our greenery. They are fed Bermuda grass and goat grain daily, with meal times being lively and energetic.
+                Despite their rowdy behavior, our goats and sheep are sweet and kind. Our caretakers ensure they receive the necessary care and attention, providing a safe and happy home for these lovable troublemakers.
+              </p>
             </div>
             <div className="w-full md:w-1/2 text-center p-10 rounded-xl">
-              <img classname="rounded-xl p-10" src="/images/brittle.webp" />
+              <img className="rounded-xl" src="/images/brittle.webp" alt="Toby" />
             </div>
           </div>
         </section>
@@ -62,7 +65,7 @@ function SheepAndGoats() {
 
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="w-full sm:w-1/2 flex justify-center">
+                <div className="md:mt-12 w-full sm:w-1/2 flex justify-center">
                   <Link href={`/Sheep-and-Goats/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6 max-h-96' alt={animal.name}></img>
@@ -71,12 +74,12 @@ function SheepAndGoats() {
                 </div>
                 <div className="w-full sm:w-1/2 p-6 mt-6">
                   <div className="align-middle">
-                  <Link href={`/Sheep-and-Goats/${animal.name}`}>
+                    <Link href={`/Sheep-and-Goats/${animal.name}`}>
                       <h3 className="text-4xl text-gray-800 text-center font-bold leading-none m-3 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         {animal.name}
                       </h3>
                     </Link>
-                    <p className="text-gray-600 my-4">
+                    <p className="text-gray-600 my-4 description">
                       {truncateText(animal.description, 350)}
                     </p>
                   </div>

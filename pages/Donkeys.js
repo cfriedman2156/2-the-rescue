@@ -58,7 +58,7 @@ function Donkeys() {
 
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
-                <div className="w-full sm:w-1/2 flex justify-center">
+                <div className="md:mt-12 w-full sm:w-1/2 flex justify-center">
                   <Link href={`/Donkeys/${animal.name}`}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
                       <img src={animal.profileImage} className='rounded-xl mt-6 max-h-96' alt={animal.name}></img>
@@ -72,7 +72,7 @@ function Donkeys() {
                         {animal.name}
                       </h3>
                     </Link>
-                    <p className="text-gray-600 my-4">
+                    <p className="text-gray-600 my-4 description">
                       {truncateText(animal.description, 350)}
                     </p>
                   </div>

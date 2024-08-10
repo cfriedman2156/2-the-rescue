@@ -14,7 +14,7 @@ export default function Shop() {
                         
                         <div className="w-full text-center h-96">
 
-                            <h1 className="my-8 text-5xl font-bold leading-tight">Shop Coming Soon!</h1>
+                            <h1 className="my-28 text-5xl font-bold leading-tight">Shop Coming Soon!</h1>
 
                             {/* <h1 className="my-4 text-4xl leading-tight">We are open to visits of all sizes upon appointment.</h1> */}
 

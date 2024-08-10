@@ -98,6 +98,14 @@ export default function Volunteer() {
                                 . Upon arrival, please unfasten the chain to open the gate. After passing through, close the gate securely and reattach the chain to prevent any animals from escaping.
                             </p>
                         </div>
+                        <div className="w-5/6  p-6">
+                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
+                                Attire
+                            </h3>
+                            <p className="text-gray-600 text-xl text-center mb-4">
+                                When visiting us please wear closed toed shoes, bring drinking water, sunscreen and a hat.
+                            </p>
+                        </div>
 
 
                     </div>

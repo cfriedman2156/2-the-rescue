@@ -10,7 +10,7 @@ export default function HorsesVideo() {
             allow="accelerometer; " 
             referrerPolicy="strict-origin-when-cross-origin" 
             allowFullScreen
-            className="ml-16 w-full h-video rounded-xl"
+            className="z-10 w-full h-video rounded-xl"
         ></iframe>
     )
 }
