@@ -15,15 +15,20 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/": [
+    "/Admin": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/pages/Admin.js"
     ],
-    "/Adopt": [
+    "/Birds": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Adopt.js"
+      "static/chunks/pages/Birds.js"
+    ],
+    "/Horses": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Horses.js"
     ],
     "/Horses/[name]": [
       "static/chunks/webpack.js",
