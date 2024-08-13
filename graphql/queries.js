@@ -118,6 +118,7 @@ export const GET_ADOPTION_AVAILABLE = gql`
   query GetAdoptionAvailable {
     animalByAdoption(adoption: true) {
       id
+      type
       name
       description
       age

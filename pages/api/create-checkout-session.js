@@ -1,13 +1,12 @@
-// pages/api/create-checkout-session.js
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { amount, interval, animalName } = req.body;
-    
+
     try {
       let session;
-      
+
       if (interval === 'monthly') {
         const product = await stripe.products.create({
           name: `Monthly Sponsorship for ${animalName}`,

@@ -17,7 +17,7 @@ export default function OtherDetail() {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
-    if (loading) return <Loading/>;
+    if (loading) return <Loading />;
     if (error) return <p>Error: {error.message}</p>;
 
     const animal = data?.animalByName;
@@ -135,9 +135,7 @@ export default function OtherDetail() {
                         <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             <a href="/Donate" className='text-black'>Sponsor {animal.name}</a>
                         </button>
-
                     </div>
-
                 </div>
                 <Footer />
                 <script src="../path/to/flowbite/dist/flowbite.min.js"></script>

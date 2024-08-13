@@ -7,7 +7,7 @@ export default function Nav() {
 
     const goToAbout = (e) => {
         e.preventDefault();
-        const offset = -40; 
+        const offset = -40;
         const scrollToSection = () => {
             const aboutSection = document.getElementById('about-section');
             const topPos = aboutSection.getBoundingClientRect().top + window.scrollY + offset;

@@ -1,4 +1,3 @@
-// components/DonateButton.js
 import { loadStripe } from '@stripe/stripe-js';
 import { useState } from 'react';
 
