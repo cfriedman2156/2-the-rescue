@@ -1,5 +1,4 @@
 import Nav from "@/components/Nav";
-import DonateFooter from "@/components/DonateFooter";
 import Footer from "@/components/Footer";
 
 

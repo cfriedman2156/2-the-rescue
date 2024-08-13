@@ -13,7 +13,7 @@ const truncateText = (text, maxLength) => {
   return text.substring(0, maxLength) + '...';
 };
 
-function Adopt() {
+export default function Adopt() {
   const { loading, error, data } = useQuery(GET_ADOPTION_AVAILABLE);
 
   if (loading) return <Loading />;
@@ -37,7 +37,7 @@ function Adopt() {
       case 'other':
         return `/Other-Friends/${animal.name}`;
       default:
-        return '/'; // Fallback to home or any other default page
+        return '/';
     }
   };
 
@@ -107,5 +107,3 @@ function Adopt() {
     </>
   );
 }
-
-export default Adopt;

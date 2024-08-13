@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Nav from '../components/Nav';
-import AnimalsHero from '../components/AnimalsHero';
-import AnimalsVideo from '@/components/AnimalsVideo';
 import DonateFooter from '@/components/DonateFooter';
 import Footer from '@/components/Footer';
 
@@ -46,7 +44,6 @@ export default function Animals() {
                             </g>
                         </svg>
                     </div>
-
                 </section>
                 <section className="bg-white border-b py-8">
                     <div className="container max-w-5xl mx-auto px-4">

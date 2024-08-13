@@ -12,11 +12,7 @@ export default function Volunteer() {
                 <section className="pt-24">
                     <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <div className="w-full md:w-1/2 text-center">
-
                             <h1 className="my-4 text-5xl font-bold leading-tight">Volunteer at 2 The Rescue Animal Sanctuary!</h1>
-
-                            {/* <h1 className="my-4 text-4xl leading-tight">We are open to visits of all sizes upon appointment.</h1> */}
-
                         </div>
                         <div className="w-visit sm:w-1/2 p-6">
                             <div className="mt-10 carousel carousel-vertical rounded-box w-full h-96">
@@ -31,8 +27,6 @@ export default function Volunteer() {
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                     <div className="relative -mt-12 lg:-mt-24">
                         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -48,7 +42,6 @@ export default function Volunteer() {
                             </g>
                         </svg>
                     </div>
-
                 </section>
                 <section id="about-section" className="bg-white border-b py-8 flex flex-col items-center">
                     <div className="container max-w-5xl mx-auto m-8">
@@ -68,15 +61,15 @@ export default function Volunteer() {
                                 Please email the signed waiver to 2therescueanimalsanctuary@gmail.com, or bring a printed copy to your scheduled visit.
                             </p>
                             <a
-                                href="/(18+)-Liability-Waiver.pdf" // Replace with your actual file path in the public directory
-                                download="(18+)-Liability-Waiver.pdf" // Rename the downloaded file if needed
+                                href="/(18+)-Liability-Waiver.pdf" 
+                                download="(18+)-Liability-Waiver.pdf" 
                                 className="btn btn-primary text-lg mx-2"
                             >
                                 Download Liability Waiver (18+)
                             </a>
                             <a
-                                href="/(Minor)-Liability-Waiver.pdf" // Replace with your actual file path in the public directory
-                                download="(Minor)-Liability-Waiver.pdf" // Rename the downloaded file if needed
+                                href="/(Minor)-Liability-Waiver.pdf" 
+                                download="(Minor)-Liability-Waiver.pdf" 
                                 className="btn btn-primary text-lg mx-2"
                             >
                                 Download Liability Waiver (Minor)
@@ -106,17 +99,8 @@ export default function Volunteer() {
                                 When visiting us please wear closed toed shoes, bring drinking water, sunscreen and a hat.
                             </p>
                         </div>
-
-
                     </div>
-
                 </section>
-
-
-
-
-
-
                 <DonateFooter />
                 <Footer />
             </main>

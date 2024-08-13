@@ -17,7 +17,7 @@ export default function DonkeyDetail() {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
-    if (loading) return <Loading/>;
+    if (loading) return <Loading />;
     if (error) return <p>Error: {error.message}</p>;
 
     const donkey = data?.animalByName;
@@ -34,8 +34,8 @@ export default function DonkeyDetail() {
     return (
         <>
             <Nav />
-            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>         
-            <section className='pt-28 flex justify-center'>
+            <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
+                <section className='pt-28 flex justify-center'>
                     <div id="default-carousel" className="relative px-10 w-1/2 " data-carousel="slide">
                         <div className="relative h-56 overflow-hidden rounded-xl h-animal-image">
                             {slides.map((slide, index) => (
@@ -117,7 +117,6 @@ export default function DonkeyDetail() {
                         </button>
                     </div>
                 </section>
-
                 <div className="container mx-auto px-4">
                     <div className='flex mt-12 flex-wrap'>
                         <div className='px-6 '>
@@ -127,17 +126,13 @@ export default function DonkeyDetail() {
                                 <p className='font-bold'>{donkey.adoption ? 'Available for Adoption' : 'Sanctuary Animal'}</p>
                                 <p className='mt-6 mb-6'>{donkey.description}</p>
                             </div>
-                            
                         </div>
-
                     </div>
                     <div className='flex justify-center text-2xl mb-10'>
-                                <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                    <a href="/Donate" className='text-black'>Sponsor {donkey.name}</a>
-                                </button>
-                                
-                            </div>
-
+                        <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            <a href="/Donate" className='text-black'>Sponsor {donkey.name}</a>
+                        </button>
+                    </div>
                 </div>
                 <Footer />
                 <script src="../path/to/flowbite/dist/flowbite.min.js"></script>

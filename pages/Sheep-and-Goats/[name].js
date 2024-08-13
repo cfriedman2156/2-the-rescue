@@ -35,7 +35,7 @@ export default function SheepDetail() {
         <>
             <Nav />
             <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
-            <section className='pt-28 flex justify-center'>
+                <section className='pt-28 flex justify-center'>
                     <div id="default-carousel" className="relative px-10 w-1/2 " data-carousel="slide">
                         <div className="relative h-56 overflow-hidden rounded-xl h-animal-image">
                             {slides.map((slide, index) => (
@@ -126,14 +126,12 @@ export default function SheepDetail() {
                                 <p className='font-bold'>{animal.adoption ? 'Available for Adoption' : 'Sanctuary Animal'}</p>
                                 <p className='mt-6 mb-6'>{animal.description}</p>
                             </div>
-
                         </div>
                     </div>
                     <div className='flex justify-center text-2xl mb-10'>
                         <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             <a href="/Donate" className='text-black'>Sponsor {animal.name}</a>
                         </button>
-
                     </div>
                 </div>
                 <Footer />

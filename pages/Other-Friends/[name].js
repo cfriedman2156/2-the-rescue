@@ -117,7 +117,6 @@ export default function OtherDetail() {
                         </button>
                     </div>
                 </section>
-
                 <div className="container mx-auto px-4">
                     <div className='flex mt-12 flex-wrap'>
                         <div className='px-6 '>
@@ -127,9 +126,7 @@ export default function OtherDetail() {
                                 <p className='font-bold'>{animal.adoption ? 'Available for Adoption' : 'Sanctuary Animal'}</p>
                                 <p className='mt-6 mb-6'>{animal.description}</p>
                             </div>
-
                         </div>
-
                     </div>
                     <div className='flex justify-center text-2xl mb-10'>
                         <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
