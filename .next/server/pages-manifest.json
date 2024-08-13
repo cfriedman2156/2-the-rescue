@@ -2,8 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Adopt": "pages/Adopt.js",
+  "/Admin": "pages/Admin.js",
+  "/Horses": "pages/Horses.js",
+  "/": "pages/index.js",
+  "/Birds": "pages/Birds.js",
   "/Horses/[name]": "pages/Horses/[name].js",
-  "/api/graphql": "pages/api/graphql.js",
-  "/": "pages/index.js"
+  "/api/graphql": "pages/api/graphql.js"
 }
