@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/Contact": "pages/Contact.js",
-  "/Shop": "pages/Shop.js"
+  "/Adopt": "pages/Adopt.js",
+  "/Horses/[name]": "pages/Horses/[name].js",
+  "/api/graphql": "pages/api/graphql.js",
+  "/": "pages/index.js"
 }

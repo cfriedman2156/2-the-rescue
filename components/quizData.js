@@ -17,14 +17,14 @@ export const quiz = {
         {
             id: 2,
             question: 'Pick a comfort food',
-            answers: ["Mac 'n Cheese", 'Ice Cream', 'Soup', 'Pie', 'Chocolate' ],
+            answers: ["Mac 'n Cheese", 'Ice Cream', 'Soup', 'Pie', 'Chocolate'],
             answersPoints: [
                 { Ferdie: 1, Rocky: 0, Brittle: 0, Toby: 0, Max: 0, Fabio: 0, Buckwheat: 1, Hammy: 0, Rusty: 0 },
                 { Ferdie: 0, Rocky: 1, Brittle: 0, Toby: 0, Max: 0, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 0 },
                 { Ferdie: 0, Rocky: 0, Brittle: 0, Toby: 1, Max: 0, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 0 },
                 { Ferdie: 0, Rocky: 0, Brittle: 0, Toby: 0, Max: 1, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 1 },
                 { Ferdie: 0, Rocky: 0, Brittle: 1, Toby: 0, Max: 0, Fabio: 1, Buckwheat: 0, Hammy: 1, Rusty: 0 },
-                
+
             ],
         },
         {
@@ -55,7 +55,7 @@ export const quiz = {
         {
             id: 5,
             question: 'Who would you invite to a dinner party?',
-            answers: ['Donald Trump', 'George R.R. Martin', 'Axl Rose', 'Aaron Rodgers', 'Vera Wang', 'Gandhi', 'Ryan Reynolds' ],
+            answers: ['Donald Trump', 'George R.R. Martin', 'Axl Rose', 'Aaron Rodgers', 'Vera Wang', 'Gandhi', 'Ryan Reynolds'],
             answersPoints: [
                 { Ferdie: 0, Rocky: 0, Brittle: 2, Toby: 0, Max: 0, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 0 },
                 { Ferdie: 2, Rocky: 0, Brittle: 0, Toby: 0, Max: 0, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 0 },

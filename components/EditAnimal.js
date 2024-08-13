@@ -18,42 +18,6 @@ export default function EditAnimalModal() {
     });
     const [editAnimal] = useMutation(EDIT_ANIMAL);
 
-    // const handleChange = (event) => {
-    //     const { name, value, type, files } = event.target;
-    //     if (type === 'file') {
-    //         if (name === 'profileImage') {
-    //             const reader = new FileReader();
-    //             reader.onloadend = () => {
-    //                 setFormState({
-    //                     ...formState,
-    //                     profileImage: reader.result
-    //                 });
-    //             };
-    //             reader.readAsDataURL(files[0]);
-    //         } else if (name === 'photos') {
-    //             const readers = [];
-    //             for (let i = 0; i < files.length; i++) {
-    //                 readers.push(new Promise((resolve, reject) => {
-    //                     const reader = new FileReader();
-    //                     reader.onloadend = () => resolve(reader.result);
-    //                     reader.onerror = reject;
-    //                     reader.readAsDataURL(files[i]);
-    //                 }));
-    //             }
-    //             Promise.all(readers).then((results) => {
-    //                 setFormState(prevState => ({
-    //                     ...prevState,
-    //                     photos: [...prevState.photos, ...results]
-    //                 }));
-    //             });
-    //         }
-    //     } else {
-    //         setFormState({
-    //             ...formState,
-    //             [name]: value,
-    //         });
-    //     }
-    // };
     const handleChange = (event) => {
         const { name, value, type, files } = event.target;
         if (type === 'file') {
@@ -76,14 +40,6 @@ export default function EditAnimalModal() {
         }
     };
 
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     const { adoption, ...rest } = formState;
-    //     await editAnimal({ variables: { ...rest, adoption: adoption === 'true' } });
-    //     alert('Animal edited successfully');
-    //     refetch();
-    // };
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -125,7 +81,6 @@ export default function EditAnimalModal() {
         }
     };
 
-
     const handleEditClick = (animal) => {
         setFormState({
             id: animal.id,
@@ -142,10 +97,6 @@ export default function EditAnimalModal() {
 
     return (
         <>
-            {/* <button onClick={() => document.getElementById('edit_animal_modal').showModal()} className='btn w-80 text-2xl h-40 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                Edit Animal
-            </button> */}
-
             <div className="text-white text-xl text-center">
                 <h1 className='text-5xl font-bold pb-4'>Edit Animal</h1>
                 {data?.animals.map(animal => (
@@ -218,7 +169,6 @@ export default function EditAnimalModal() {
                     <button>close</button>
                 </form>
             </dialog>
-
         </>
     );
 }

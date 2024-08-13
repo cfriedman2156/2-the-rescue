@@ -32,10 +32,9 @@ const schema = makeExecutableSchema({
 const apolloServer = new ApolloServer({
   schema,
   context: ({ req }) => {
-    // Bypassing JWT authentication for now
     return { user: null };
   },
-  uploads: { maxFieldSize: 10000000,}
+  uploads: { maxFieldSize: 10000000, }
 });
 
 const startServer = apolloServer.start();
