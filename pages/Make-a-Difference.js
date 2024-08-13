@@ -11,7 +11,7 @@ export default function Animals() {
                 className="leading-normal tracking-normal text-white gradient"
                 style={{ fontFamily: "'Source Sans Pro', sans-serif" }}
             >
-                <section className="pt-24">
+                <section className="pt-20">
                     <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <div className="w-full md:w-1/2 text-center">
                             <h1 className="my-4 text-7xl font-bold leading-tight">Make a Difference</h1>

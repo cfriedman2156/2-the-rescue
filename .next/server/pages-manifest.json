@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Volunteer": "pages/Volunteer.js",
-  "/Adopt": "pages/Adopt.js",
-  "/Contact": "pages/Contact.js"
+  "/Visit": "pages/Visit.js",
+  "/Make-a-Difference": "pages/Make-a-Difference.js",
+  "/": "pages/index.js"
 }

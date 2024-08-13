@@ -15,15 +15,15 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/Adopt": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Adopt.js"
+      "static/chunks/pages/index.js"
     ],
-    "/Contact": [
+    "/Visit": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Contact.js"
+      "static/chunks/pages/Visit.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

@@ -52,7 +52,7 @@ export default function Home() {
             </g>
           </svg>
         </section>
-        <section id="about-section" className="bg-white border-b py-8">
+        <section id="about-section" className="bg-white border-b py-2">
           <div className="container max-w-5xl mx-auto m-8 px-4">
             <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
               About
