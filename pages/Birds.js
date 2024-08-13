@@ -13,13 +13,12 @@ const truncateText = (text, maxLength) => {
   return text.substring(0, maxLength) + '...';
 };
 
-function Birds() {
+export default function Birds() {
   const { loading, error, data } = useQuery(GET_BIRDS);
 
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
-  // Ensure data and data.animalsType are defined
   const animals = data?.animalsType || [];
 
   return (
@@ -62,7 +61,6 @@ function Birds() {
             <div className="w-full mb-4">
               <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-
             {animals.map((animal) => (
               <div key={animal.id} className="flex flex-wrap flex-col-reverse sm:flex-row">
                 <div className="w-full sm:w-1/2 flex justify-center">
@@ -94,5 +92,3 @@ function Birds() {
     </>
   );
 }
-
-export default Birds;

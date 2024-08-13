@@ -13,13 +13,12 @@ const truncateText = (text, maxLength) => {
   return text.substring(0, maxLength) + '...';
 };
 
-function OtherFriends() {
+export default function OtherFriends() {
   const { loading, error, data } = useQuery(GET_OTHER);
 
   if (loading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
-  // Ensure data and data.animalsType are defined
   const animals = data?.animalsType || [];
 
   return (
@@ -94,4 +93,3 @@ function OtherFriends() {
   );
 }
 
-export default OtherFriends;

@@ -41,8 +41,7 @@ export default function Visit() {
                                 </div>
                                 <div className="diff-resizer"></div>
                             </div>
-                        </div>
-                        
+                        </div>                      
                     </div>
                     <div className="relative -mt-12 lg:-mt-24">
                         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -58,15 +57,7 @@ export default function Visit() {
                             </g>
                         </svg>
                     </div>
-
                 </section>
-                
-
-
-
-
-
-
                 <DonateFooter />
                 <Footer />
             </main>

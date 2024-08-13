@@ -79,12 +79,20 @@ body {
 }
 
 .quiz-box {
-  min-height: 38rem;
+  height: 38rem;
   width: 90rem;
 }
 
 .quiz-box-small {
   min-height: 34rem;
+}
+
+.quiz-container {
+  min-height: 32rem;
+}
+
+.quiz-container-small {
+  min-height: 20rem;
 }
 
 .w-visit {

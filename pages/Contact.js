@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import EmailTemplate from "@/components/email-template";
-import DonateFooter from "@/components/DonateFooter";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
@@ -20,7 +19,6 @@ export default function Contact() {
                         </div>
                     </div>
                 </section>
-                {/* <DonateFooter /> */}
                 <Footer />
             </main>
         </>

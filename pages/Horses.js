@@ -15,7 +15,7 @@ const truncateText = (text, maxLength) => {
   return text.substring(0, maxLength) + '...';
 };
 
-function Horses() {
+export default function Horses() {
   const { loading, error, data } = useQuery(GET_HORSES);
 
   if (loading) return <Loading />;
@@ -85,5 +85,3 @@ function Horses() {
     </>
   );
 }
-
-export default Horses;
