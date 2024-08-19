@@ -11,26 +11,26 @@ export default function Animals() {
                 className="leading-normal tracking-normal text-white gradient"
                 style={{ fontFamily: "'Source Sans Pro', sans-serif" }}
             >
-                <section className="pt-20">
-                    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                        <div className="w-full md:w-1/2 text-center">
-                            <h1 className="my-4 text-7xl font-bold leading-tight">Make a Difference</h1>
+                <section className="pt-16 sm:pt-20">
+                    <div className="container px-4 sm:px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                        <div className="pt-14 w-full md:w-1/2 text-center md:text-left">
+                            <h1 className="my-4 text-4xl sm:text-6xl font-bold leading-tight">Make a Difference</h1>
                         </div>
-                        <div className="w-visit sm:w-1/2 p-6">
-                            <div className="mt-10 carousel carousel-vertical rounded-box w-full h-96">
+                        <div className="w-full md:w-1/2 p-4 sm:p-6 mt-8 md:mt-0">
+                            <div className="carousel carousel-vertical rounded-box w-full h-64 sm:h-96">
                                 <div className="carousel-item">
-                                    <img src="images/visit3.jpg" alt="" className="h-full object-cover" />
+                                    <img src="images/visit3.jpg" alt="" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="carousel-item">
-                                    <img src="images/visit2.jpg" alt="" className="h-full object-cover" />
+                                    <img src="images/visit2.jpg" alt="" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="carousel-item">
-                                    <img src="images/visit.jpg" alt="" className="h-full object-cover" />
+                                    <img src="images/visit.jpg" alt="" className="h-full w-full object-cover" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="relative -mt-12 lg:-mt-24">
+                    <div className="relative -mt-8 sm:-mt-12 lg:-mt-24">
                         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                                 <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fillRule="nonzero">

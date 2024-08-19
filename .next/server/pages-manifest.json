@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Visit": "pages/Visit.js",
+  "/Volunteer": "pages/Volunteer.js",
   "/Make-a-Difference": "pages/Make-a-Difference.js",
-  "/": "pages/index.js"
+  "/api/graphql": "pages/api/graphql.js",
+  "/Adopt": "pages/Adopt.js"
 }
