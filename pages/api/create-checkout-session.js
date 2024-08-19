@@ -6,10 +6,17 @@ export default async function handler(req, res) {
 
     try {
       let session;
+      let productName = '';
 
       if (interval === 'monthly') {
+        if (animalName) {
+          productName = `Monthly Sponsorship of ${animalName}`;
+        } else {
+          productName = 'Monthly Donation';
+        }
+        
         const product = await stripe.products.create({
-          name: `Monthly Sponsorship for ${animalName}`,
+          name: productName,
         });
 
         const price = await stripe.prices.create({
@@ -34,6 +41,8 @@ export default async function handler(req, res) {
           cancel_url: `${req.headers.origin}/Donate`,
         });
       } else {
+        productName = 'One-Time Donation';
+
         session = await stripe.checkout.sessions.create({
           payment_method_types: ['card'],
           line_items: [
@@ -41,7 +50,7 @@ export default async function handler(req, res) {
               price_data: {
                 currency: 'usd',
                 product_data: {
-                  name: `One-Time Donation for ${animalName}`,
+                  name: productName,
                 },
                 unit_amount: amount,
               },

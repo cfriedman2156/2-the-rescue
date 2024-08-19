@@ -2,8 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Volunteer": "pages/Volunteer.js",
-  "/Make-a-Difference": "pages/Make-a-Difference.js",
+  "/Sponsor": "pages/Sponsor.js",
   "/api/graphql": "pages/api/graphql.js",
-  "/Adopt": "pages/Adopt.js"
+  "/Donate": "pages/Donate.js",
+  "/Make-a-Difference": "pages/Make-a-Difference.js",
+  "/api/create-checkout-session": "pages/api/create-checkout-session.js"
 }
