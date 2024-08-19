@@ -49,7 +49,7 @@ export default function Adopt() {
           <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="w-full text-center">
               <h1 className="my-4 text-5xl font-bold leading-tight">Adopting One of Our Animals</h1>
-              <p className="leading-normal text-2xl">Below is the list of our animals available for adoption</p>
+              <p className="leading-normal text-2xl">Below is the list of our animals available for adoption.</p>
               <p className="leading-normal text-2xl mb-8">To inquire about adopting one of our animals, please email us at <span className='font-bold'>2therescueanimalsanctuary@gmail.com</span></p>
             </div>
           </div>

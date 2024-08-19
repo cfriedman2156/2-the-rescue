@@ -2,20 +2,18 @@ import Nav from "@/components/Nav";
 import DonateFooter from "@/components/DonateFooter";
 import Footer from "@/components/Footer";
 
-
-
 export default function Volunteer() {
     return (
         <>
             <Nav />
             <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
-                <section className="pt-24">
-                    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                        <div className="w-full md:w-1/2 text-center">
-                            <h1 className="my-4 text-5xl font-bold leading-tight">Volunteer at 2 The Rescue Animal Sanctuary!</h1>
+                <section className="pt-16 sm:pt-24">
+                    <div className="container px-4 mx-auto flex flex-wrap flex-col items-center md:flex-row md:items-center">
+                        <div className="w-full md:w-1/2 text-center px-4 sm:px-6 pt-12">
+                            <h1 className="my-4 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Volunteer at 2 The Rescue Animal Sanctuary!</h1>
                         </div>
-                        <div className="w-visit sm:w-1/2 p-6">
-                            <div className="mt-10 carousel carousel-vertical rounded-box w-full h-96">
+                        <div className="w-full md:w-1/2 p-4 pb-8 ">
+                            <div className="mt-6 sm:mt-10 carousel carousel-vertical rounded-box w-full h-64 sm:h-80 md:h-96">
                                 <div className="carousel-item">
                                     <img src="images/visit2.jpg" alt="" className="h-full object-cover" />
                                 </div>
@@ -45,40 +43,41 @@ export default function Volunteer() {
                 </section>
                 <section id="about-section" className="bg-white border-b py-8 flex flex-col items-center">
                     <div className="container max-w-5xl mx-auto m-8">
-                        <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                        <h2 className="w-full my-2 text-4xl sm:text-5xl font-bold leading-tight text-center text-gray-800">
                             Volunteering Details
                         </h2>
                     </div>
-                    <div className="flex flex-wrap justify-center text-center w-visit1">
-                        <div className="w-5/6  p-6">
-                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
+                    <div className="flex flex-wrap justify-center text-center w-full sm:w-visit1">
+                        <div className="w-full sm:w-5/6 p-6">
+                            <h3 className="text-2xl sm:text-3xl text-center text-gray-800 font-bold leading-none mb-3">
                                 How to Volunteer
                             </h3>
-                            <p className="text-gray-600 text-xl text-center  ">
+                            <p className="text-gray-600 text-lg sm:text-xl text-center">
                                 We are open to people of all ages and sizes. Please fill out our liability waiver, and call to schedule an appointment.
                             </p>
-                            <p className="text-gray-600 text-xl text-center mb-4 ">
+                            <p className="text-gray-600 text-lg sm:text-xl text-center mb-4">
                                 Please email the signed waiver to 2therescueanimalsanctuary@gmail.com, or bring a printed copy to your scheduled visit.
                             </p>
                             <a
                                 href="/(18+)-Liability-Waiver.pdf" 
                                 download="(18+)-Liability-Waiver.pdf" 
-                                className="btn btn-primary text-lg mx-2"
+                                className="btn btn-primary text-base sm:text-lg mx-2 mb-1"
                             >
                                 Download Liability Waiver (18+)
                             </a>
                             <a
                                 href="/(Minor)-Liability-Waiver.pdf" 
-                                download="(Minor)-Liability-Waiver.pdf" 
-                                className="btn btn-primary text-lg mx-2"
+                                download="(Minor)-Liability-Waiver.pdf"
+                                className="btn btn-primary text-base sm:text-lg mx-2 mb-1"
                             >
                                 Download Liability Waiver (Minor)
-                            </a></div>
-                        <div className="w-5/6  p-6">
-                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
+                            </a>
+                        </div>
+                        <div className="w-full sm:w-5/6 p-6">
+                            <h3 className="text-2xl sm:text-3xl text-center text-gray-800 font-bold leading-none mb-3">
                                 Arrival Details
                             </h3>
-                            <p className="text-gray-600 text-xl text-center mb-4">
+                            <p className="text-gray-600 text-lg sm:text-xl text-center mb-4">
                                 We are located at{' '}
                                 <a
                                     href="https://maps.app.goo.gl/5ra1YrNyP4nge3To8"
@@ -91,12 +90,12 @@ export default function Volunteer() {
                                 . Upon arrival, please unfasten the chain to open the gate. After passing through, close the gate securely and reattach the chain to prevent any animals from escaping.
                             </p>
                         </div>
-                        <div className="w-5/6  p-6">
-                            <h3 className="text-3xl text-center text-gray-800 font-bold leading-none mb-3 ">
+                        <div className="w-full sm:w-5/6 p-6">
+                            <h3 className="text-2xl sm:text-3xl text-center text-gray-800 font-bold leading-none mb-3">
                                 Attire
                             </h3>
-                            <p className="text-gray-600 text-xl text-center mb-4">
-                                When visiting us please wear closed toed shoes, bring drinking water, sunscreen and a hat.
+                            <p className="text-gray-600 text-lg sm:text-xl text-center mb-4">
+                                When visiting us, please wear closed-toed shoes, bring drinking water, sunscreen, and a hat.
                             </p>
                         </div>
                     </div>

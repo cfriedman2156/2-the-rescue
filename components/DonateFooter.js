@@ -29,9 +29,9 @@ export default function DonateFooter() {
                 <div className="w-full mb-4">
                     <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
-                <h3 className="my-4 mx-20 text-xl leading-tight">
+                <h3 className="my-4 md:mx-20 text-xl leading-tight">
                     Your generous donations directly support the animals in our care. Every dollar contributes to providing food, shelter, and medical treatment, ensuring our animals remain healthy and comfortable.</h3>
-                <h3 className="my-4 mx-40 text-xl leading-tight">
+                <h3 className="my-4 md:mx-40 text-xl leading-tight">
                     Your support helps us continue our mission to rescue, rehabilitate, and rehome animals in need. Together, we can make a life-saving difference.
                 </h3>
                 <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
