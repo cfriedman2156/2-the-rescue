@@ -47,7 +47,7 @@ export default function HorseDetail() {
                                     <img
                                         src={slide}
                                         className="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-xl"
-                                        alt={`Slide ${index + 1}`}
+                                        alt={`Slide ${index + 1} of ${horse.name}'s photos at 2 the rescue animal sanctuary.`}
                                     />
                                 </div>
                             ))}

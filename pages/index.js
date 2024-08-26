@@ -75,22 +75,22 @@ export default function Home() {
               <div className="w-full sm:w-1/2 p-6">
                 <div className="mt-10 carousel carousel-vertical rounded-box w-full h-96">
                   <div className="carousel-item">
-                    <img src="images/brittle.webp" alt="Brittle" className="h-full object-cover" />
+                    <img src="images/brittle.webp" alt="Brittle, goat resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/charlie.webp" alt="Charlie" className="h-full object-cover" />
+                    <img src="images/charlie.webp" alt="Charlie, sheep resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/peter.webp" alt="Peter" className="h-full object-cover" />
+                    <img src="images/peter.webp" alt="Peter, donkey resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/quacky.webp" alt="Quacky" className="h-full object-cover" />
+                    <img src="images/quacky.webp" alt="Quacky, duck resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/thor.webp" alt="Thor" className="h-full object-cover" />
+                    <img src="images/thor.webp" alt="Thor, great pyranese resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/toby.webp" alt="Toby" className="h-full object-cover" />
+                    <img src="images/toby.webp" alt="Toby, tortoise resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -99,25 +99,25 @@ export default function Home() {
               <div className="w-full sm:w-1/2 p-6 mt-6 sm:mt-1">
                 <div className="mt-16 carousel carousel-vertical rounded-box w-full h-96">
                   <div className="carousel-item">
-                    <img src="images/hammy.webp" alt="Hammy" className="h-full object-cover" />
+                    <img src="images/hammy.webp" alt="Hammy, pig resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/tucker.webp" alt="Tucker" className="h-full object-cover" />
+                    <img src="images/tucker.webp" alt="Tucker, horse resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/viola.webp" alt="Viola" className="h-full object-cover" />
+                    <img src="images/viola.webp" alt="Viola, horse resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/gobbles.webp" alt="Gobbles" className="h-full object-cover" />
+                    <img src="images/gobbles.webp" alt="Gobbles, turkey resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/tink.webp" alt="Tink" className="h-full object-cover" />
+                    <img src="images/tink.webp" alt="Tink, donkey resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/faith.webp" alt="Faith" className="h-full object-cover" />
+                    <img src="images/faith.webp" alt="Faith, mule resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                   <div className="carousel-item">
-                    <img src="images/victory.webp" alt="Victory" className="h-full object-cover" />
+                    <img src="images/victory.webp" alt="Victory, horse resident of the animal sanctuary" className="h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function Home() {
                 <img
                   src="images/tink.webp"
                   className="m-2 w-5/6 mx-auto rounded-lg"
-                  alt="Tink"
+                  alt="Tinker bell, donkey resident of the animal sanctuary"
                 ></img>
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden p-6">
@@ -214,7 +214,7 @@ export default function Home() {
                 <img
                   src="images/tucker.webp"
                   className="m-2 w-5/6 mx-auto rounded-lg"
-                  alt="Tucker"
+                  alt="Tucker, horse resident of the animal sanctuary"
                 ></img>
               </div>
               <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden p-6">

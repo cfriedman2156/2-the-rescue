@@ -81,7 +81,7 @@ export default function Adopt() {
                 <div className="w-full sm:w-1/2">
                   <Link href={getAnimalLink(animal)}>
                     <button className='focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                      <img src={animal.profileImage} className='rounded-xl mt-6' alt={animal.name}></img>
+                      <img src={animal.profileImage} className='rounded-xl mt-6' alt={`Picture of ${animal.name} at 2 the rescue animal sanctuary.`}></img>
                     </button>
                   </Link>
                 </div>

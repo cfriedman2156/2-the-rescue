@@ -32,11 +32,11 @@ export default function Visit() {
                             </div>
                             <div className="mt-10 ml-7 rounded-xl diff aspect-[9/12] ba-img">
                                 <div className="diff-item-1">
-                                    <img alt="Prince after" src="/images/princeafter.webp" />
+                                    <img alt="Prince, the horse, after his rehabilitation at 2 The Rescue Animal Sanctuary" src="/images/princeafter.webp" />
                                 </div>
                                 <div className="diff-item-2">
                                     <img
-                                        alt="Prince before"
+                                        alt="Prince, the horse, before his rehabilitation at 2 The Rescue Animal Sanctuary"
                                         src="/images/princebefore.jpeg" />
                                 </div>
                                 <div className="diff-resizer"></div>
