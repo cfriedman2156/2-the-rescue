@@ -10,7 +10,7 @@ export default function Animals() {
         <>
             <Nav />
             <main
-                className="leading-normal tracking-normal text-white gradient"
+                className="leading-normal tracking-normal text-white gradient pt-24 md:pt-18"
                 style={{ fontFamily: "'Source Sans Pro', sans-serif" }}
             >
                 <AnimalsHero
