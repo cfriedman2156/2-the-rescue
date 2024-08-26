@@ -15,20 +15,15 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/Donate": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Donate.js"
+      "static/chunks/pages/index.js"
     ],
-    "/Make-a-Difference": [
+    "/Quiz": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Make-a-Difference.js"
-    ],
-    "/Sponsor": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Sponsor.js"
+      "static/chunks/pages/Quiz.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

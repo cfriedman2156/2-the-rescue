@@ -97,13 +97,16 @@ export default function Quiz() {
                     <button
                       key={idx}
                       onClick={() => answerSelected(answer, idx)}
-                      className={`btn min-h-16 md:h-32 w-40 md:w-60 text-lg md:text-3xl m-2 md:m-4 ${
-                        selectedAnswerIndex === idx ? "btn-primary" : ""
-                      }`}
+                      className={`btn min-h-16 md:h-32 w-40 md:w-60 m-2 md:m-4 
+                ${selectedAnswerIndex === idx ? "btn-primary" : ""} 
+                whitespace-normal break-words text-center 
+                ${answer.length > 20 ? "text-sm" : "text-lg"} 
+                ${answer.length > 30 ? "text-xs" : ""}`}
                     >
                       {answer}
                     </button>
                   ))}
+
                 </div>
                 <div className="flex mx-4 justify-center">
                   {checked ? (
