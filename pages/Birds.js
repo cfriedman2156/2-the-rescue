@@ -35,7 +35,7 @@ export default function Birds() {
               </p>
             </div>
             <div className="w-full md:w-1/2 text-center p-10 rounded-xl">
-              <img className="rounded-xl" src="/images/chanel.webp" alt="Toby" />
+              <img className="rounded-xl" src="/images/chanel.webp" alt="Coco Chanel, one of the birds at the animal sanctuary" />
             </div>
           </div>
         </section>
