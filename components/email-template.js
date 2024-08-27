@@ -29,6 +29,7 @@ export default function EmailTemplate() {
 
         if (response.ok) {
             alert("Email sent successfully!");
+            setData({ name: "", email: "", phone: "", subject: "", message: "" }); // Reset form
         } else {
             alert("Failed to send email.");
         }
