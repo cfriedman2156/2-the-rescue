@@ -1,9 +1,6 @@
 {
-  "/api/send": "static/webpack/pages/api/send.6f62ef1ce57b43a9.hot-update.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Horses": "pages/Horses.js",
-  "/": "pages/index.js",
-  "/Donkeys": "pages/Donkeys.js"
+  "/Quiz": "pages/Quiz.js"
 }
