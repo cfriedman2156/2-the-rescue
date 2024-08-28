@@ -10,20 +10,12 @@
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js"
   ],
-  "rootMainFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/main-app.js"
-  ],
+  "rootMainFiles": [],
   "pages": {
-    "/Donkeys": [
+    "/Quiz": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Donkeys.js"
-    ],
-    "/Horses": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Horses.js"
+      "static/chunks/pages/Quiz.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

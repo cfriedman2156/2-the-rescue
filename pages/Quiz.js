@@ -97,11 +97,11 @@ export default function Quiz() {
                     <button
                       key={idx}
                       onClick={() => answerSelected(answer, idx)}
-                      className={`btn min-h-16 md:h-32 w-40 md:w-60 m-2 md:m-4 
+                      className={`btn min-h-16 md:h-32 w-32 md:w-60 m-1 md:m-4 
                 ${selectedAnswerIndex === idx ? "btn-primary" : ""} 
                 whitespace-normal break-words text-center 
-                ${answer.length > 20 ? "text-sm md:text-3xl" : "text-lg md:text-3xl"} 
-                ${answer.length > 30 ? "text-xs md:text-3xl" : ""}`}
+                ${answer.length > 13 ? "text-sm md:text-3xl" : "text-lg md:text-3xl"} 
+                ${answer.length > 17 ? "text-xs md:text-3xl" : ""}`}
                     >
                       {answer}
                     </button>
