@@ -12,10 +12,20 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/Quiz": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Quiz.js"
+      "static/chunks/pages/index.js"
+    ],
+    "/Adopt": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Adopt.js"
+    ],
+    "/Volunteer": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Volunteer.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
