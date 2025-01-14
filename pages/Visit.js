@@ -52,6 +52,9 @@ export default function Visit() {
                             <h3 className="text-2xl sm:text-3xl text-center text-gray-800 font-bold leading-none mb-3">
                                 How to Visit
                             </h3>
+                            <p className="text-gray-600 underline font-bold text-lg sm:text-xl text-center pb-4">
+                                Please call us at <span className="text-blue-600">(619) 518-4153</span> to schedule an appointment.
+                            </p>
                             <p className="text-gray-600 text-lg sm:text-xl text-center">
                                 We are open to people of all ages and sizes. Please fill out our liability waiver, and call to schedule an appointment for a visit or a tour.
                             </p>
