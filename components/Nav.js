@@ -154,9 +154,9 @@ export default function Nav() {
                                     Make a Difference
                                 </div>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><a href="/Donate">Donate</a></li>
+                                    <li><a href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank'>Donate</a></li>
                                     <li><a href="https://www.amazon.com/hz/wishlist/ls/12L26I5L4YHKS/ref=hz_ls_biz_ex" target="_blank">Amazon Wishlist</a></li>
-                                    <li><a href="/Sponsor">Sponsor an Animal</a></li>
+                                    <li><a href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank'>Sponsor an Animal</a></li>
                                     <li><a href="/Visit">Visit</a></li>
                                     <li><a href="/Volunteer">Volunteer</a></li>
                                     <li><a href="/Adopt">Adopt</a></li>
@@ -170,8 +170,8 @@ export default function Nav() {
                             <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="/Contact">Contact</a>
                         </li>
                     </ul>
-                    <button id="navAction" href="/Donate" className="mx-auto lg:mx-0 hover:underline blue md:bg-white text-white md:text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                        <a href="/Donate">Donate</a>
+                    <button id="navAction" href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank' className="mx-auto lg:mx-0 hover:underline blue md:bg-white text-white md:text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        <a href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank'>Donate</a>
                     </button>
                 </div>
             </div>

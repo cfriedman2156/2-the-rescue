@@ -2,9 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
+  "/Visit": "pages/Visit.js",
   "/Schedule-Event": "pages/Schedule-Event.js",
-  "/Volunteer": "pages/Volunteer.js",
-  "/Adopt": "pages/Adopt.js",
-  "/api/graphql": "pages/api/graphql.js"
+  "/Sponsor": "pages/Sponsor.js",
+  "/": "pages/index.js"
 }
