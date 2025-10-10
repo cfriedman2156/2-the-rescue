@@ -17,15 +17,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/Adopt": [
+    "/Schedule-Event": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Adopt.js"
+      "static/chunks/pages/Schedule-Event.js"
     ],
-    "/Volunteer": [
+    "/Sponsor": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Volunteer.js"
+      "static/chunks/pages/Sponsor.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

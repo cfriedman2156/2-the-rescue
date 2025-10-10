@@ -14,7 +14,7 @@ export default function Hero() {
                     <button
                         className="lg:mx-auto hover:underline blue md:bg-white text-white text-xl md:text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transition-transform duration-300 ease-in-out transform hover:scale-105"
                     >
-                        <a href="/Donate">Make a Donation</a>
+                        <a href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank'>Make a Donation</a>
                     </button>
                 </div>
                 <div className="w-full md:pt-14 md:w-1/2 md:pl-16 sm:pb-10 text-center">

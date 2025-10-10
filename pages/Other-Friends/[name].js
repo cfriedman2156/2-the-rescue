@@ -129,8 +129,8 @@ export default function OtherDetail() {
                         </div>
                     </div>
                     <div className='flex justify-center text-2xl mb-10'>
-                        <button href="/Donate" className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            <a href="/Donate" className='text-black'>Sponsor {animal.name}</a>
+                        <button href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank' className="mx-auto lg:mx-0 hover:underline bg-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            <a href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank' className='text-black'>Sponsor {animal.name}</a>
                         </button>
                     </div>
                 </div>

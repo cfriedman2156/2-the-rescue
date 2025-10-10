@@ -55,7 +55,7 @@ export default function Animals() {
                         </div>
                         <div className="flex flex-wrap justify-center">
                             <div className="w-full sm:w-1/2 p-4">
-                                <Link href="/Donate">
+                                <Link href="https://www.zeffy.com/en-US/donation-form/donate-to-2-the-rescue-animal-sanctuary" target='_blank'>
                                     <h3 className="text-3xl md:text-5xl text-center text-gray-800 font-bold leading-none mb-3">
                                         Donate
                                     </h3>
