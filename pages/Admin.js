@@ -29,27 +29,31 @@ export default function Admin() {
   return (
     <>
       {showModal && (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg p-6 w-96">
-            <h2 className="text-xl font-bold mb-4">Admin Login</h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 px-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-3xl bg-white p-8 text-slate-800 shadow-2xl">
+            <div className="mb-8 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-teal-600">2 The Rescue</p>
+              <h2 className="text-3xl font-bold">Admin Login</h2>
+              <p className="mt-2 text-sm text-slate-500">Sign in to manage sanctuary animals.</p>
+            </div>
             <input
               type="text"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
+              className="input input-bordered mb-4 w-full bg-slate-50"
             />
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
+              className="input input-bordered mb-4 w-full bg-slate-50"
             />
             {error && <p className="text-red-500 mb-4">{error}</p>}
             <button
               onClick={handleLogin}
-              className="bg-blue-500 text-white p-2 rounded w-full"
+              className="btn w-full border-none bg-teal-600 text-white hover:bg-teal-700"
             >
               Login
             </button>
@@ -59,23 +63,25 @@ export default function Admin() {
       {isAuthenticated && (
         <>
           <Nav />
-          <main className="leading-normal tracking-normal text-white gradient" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
-            <section className="hero h-64 flex flex-col justify-end">
-              <div className="text-center">
-                <div className="max-w-md">
-                  <h1 className="text-5xl mt-10 font-bold">Admin Page</h1>
-                  <p className="text-lg py-6">Make changes to the site</p>
+          <main className="min-h-screen bg-slate-100 leading-normal tracking-normal text-slate-800" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>
+            <section className="gradient px-6 pb-20 pt-24 text-white">
+              <div className="mx-auto max-w-6xl">
+                <div className="max-w-3xl">
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-white/80">Sanctuary dashboard</p>
+                  <h1 className="text-4xl font-bold md:text-6xl">Admin Center</h1>
+                  <p className="mt-4 max-w-2xl text-lg text-white/90">Add new residents, update animal profiles, and keep adoption information current.</p>
                 </div>
               </div>
             </section>
-            <div className="flex flex-wrap justify-evenly  pt-10">
-              <AddAnimal />
-              <DeleteAnimalModal />              
-            </div>            
-            <div className="flex flex-wrap justify-evenly mt-16  ">             
-              <EditAnimalModal />
+            <div className="mx-auto -mt-12 max-w-6xl px-6 pb-20">
+              <div className="grid gap-6 lg:grid-cols-2">
+                <AddAnimal />
+                <DeleteAnimalModal />
+              </div>
+              <div className="mt-8">
+                <EditAnimalModal />
+              </div>
             </div>
-            <div className="bg-white rounded-xl m-10 flex w-full justify-center w-96"></div>
             <Footer />
           </main>
         </>

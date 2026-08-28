@@ -11,7 +11,7 @@ export default function SheepDetail() {
     const { name } = router.query;
 
     const { loading, error, data } = useQuery(GET_ANIMAL_BY_NAME, {
-        variables: { name },
+        variables: { name, type: 'sheep/goat' },
         skip: !name,
     });
 

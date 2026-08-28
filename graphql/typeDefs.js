@@ -16,7 +16,7 @@ const typeDefs = gql`
     animalsType(type: String!): [Animal]
     animals: [Animal]
     animal(id: ID!): Animal
-    animalByName(name: String!): Animal
+    animalByName(name: String!, type: String): Animal
     animalByAdoption(adoption: Boolean!): [Animal]
   }
 
