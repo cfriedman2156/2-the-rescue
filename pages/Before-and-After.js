@@ -1,10 +1,18 @@
 import Nav from "@/components/Nav";
 import DonateFooter from "@/components/DonateFooter";
 import Footer from "@/components/Footer";
+import { useQuery } from "@apollo/client";
+import { GET_ANIMAL_BY_NAME } from "@/graphql/queries";
 
 
 
 export default function Visit() {
+    const { data } = useQuery(GET_ANIMAL_BY_NAME, {
+        variables: { name: 'Luke', type: 'horse' },
+    });
+
+    const luke = data?.animalByName;
+
     return (
         <>
             <Nav />
@@ -41,7 +49,28 @@ export default function Visit() {
                                 </div>
                                 <div className="diff-resizer"></div>
                             </div>
-                        </div>                      
+                        </div>
+                        <div className="mt-16 flex flex-wrap items-center">
+                            <div className="mt-10 ml-7 rounded-xl diff aspect-[9/12] ba-img">
+                                <div className="diff-item-1">
+                                    <img alt="Luke, the horse, after his rehabilitation at 2 The Rescue Animal Sanctuary" src="/images/lukeAfter.png" />
+                                </div>
+                                <div className="diff-item-2">
+                                    <img
+                                        alt="Luke, the horse, before his rehabilitation at 2 The Rescue Animal Sanctuary"
+                                        src="/images/lukeBefore.png" />
+                                </div>
+                                <div className="diff-resizer"></div>
+                            </div>
+                            <div className="w-5/6 sm:w-1/2 p-6">
+                                <h3 className="text-4xl text-center font-bold leading-none mb-3 ">
+                                    Luke
+                                </h3>
+                                <p className="text-lg mb-4">
+                                    {luke?.description || 'Luke’s story is coming soon.'}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div className="relative -mt-12 lg:-mt-24">
                         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

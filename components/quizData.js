@@ -55,7 +55,7 @@ export const quiz = {
         {
             id: 5,
             question: 'Who would you invite to a dinner party?',
-            answers: ['Donald Trump', 'George R.R. Martin', 'Axl Rose', 'Aaron Rodgers', 'Vera Wang', 'Gandhi', 'Ryan Reynolds'],
+            answers: ['Donald Trump', 'George R.R. Martin', 'Axl Rose', 'Aaron Rodgers', 'Karl Lagerfeld', 'Gandhi', 'Ryan Reynolds'],
             answersPoints: [
                 { Ferdie: 0, Rocky: 0, Brittle: 2, Toby: 0, Max: 0, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 0 },
                 { Ferdie: 2, Rocky: 0, Brittle: 0, Toby: 0, Max: 0, Fabio: 0, Buckwheat: 0, Hammy: 0, Rusty: 0 },

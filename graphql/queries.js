@@ -30,8 +30,8 @@ export const GET_HORSES = gql`
 `;
 
 export const GET_ANIMAL_BY_NAME = gql`
-  query GetAnimalByName($name: String!) {
-    animalByName(name: $name) {
+  query GetAnimalByName($name: String!, $type: String) {
+    animalByName(name: $name, type: $type) {
       id
       name
       description
@@ -39,6 +39,7 @@ export const GET_ANIMAL_BY_NAME = gql`
       adoption
       profileImage
       photos
+      type
     }
   }
 `;

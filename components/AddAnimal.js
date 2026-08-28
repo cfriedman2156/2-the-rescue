@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_ANIMAL } from '../graphql/mutations';
+import { GET_ANIMALS } from '@/graphql/queries';
 import axios from 'axios';
 
 export default function AddAnimal() {
@@ -13,7 +14,9 @@ export default function AddAnimal() {
         profileImage: null,
         photos: []
     });
-    const [addAnimal] = useMutation(ADD_ANIMAL);
+    const [addAnimal] = useMutation(ADD_ANIMAL, {
+        refetchQueries: [{ query: GET_ANIMALS }],
+    });
 
     const handleChange = (event) => {
         const { name, value, type, files } = event.target;
@@ -80,24 +83,35 @@ export default function AddAnimal() {
 
     return (
         <>
-            <button onClick={() => document.getElementById('add_animal_modal').showModal()} className='btn w-80 text-2xl h-40 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                Add Animal
-            </button>
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
+                <div className="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-600">Create</p>
+                        <h2 className="mt-2 text-3xl font-bold text-slate-900">Add Animal</h2>
+                        <p className="mt-2 text-slate-500">Create a new animal profile with photos and adoption details.</p>
+                    </div>
+                    <div className="rounded-2xl bg-teal-50 px-4 py-3 text-3xl">+</div>
+                </div>
+                <button onClick={() => document.getElementById('add_animal_modal').showModal()} className='btn w-full border-none bg-teal-600 text-white hover:bg-teal-700'>
+                    Add New Animal
+                </button>
+            </div>
             <dialog id="add_animal_modal" className="modal">
-                <div className="modal-box text-black flex flex-col items-center">
-                    <h3 className='text-2xl font-bold mb-2'>Add New Animal</h3>
-                    <form onSubmit={handleSubmit} encType="multipart/form-data" method='post'>
-                        <label className="form-control w-full max-w-xs mb-4">
+                <div className="modal-box max-w-2xl text-slate-800">
+                    <h3 className='text-3xl font-bold'>Add New Animal</h3>
+                    <p className="mb-6 mt-2 text-slate-500">Fill out the details below to publish a new animal profile.</p>
+                    <form onSubmit={handleSubmit} encType="multipart/form-data" method='post' className="grid gap-4 md:grid-cols-2">
+                        <label className="form-control mb-4 w-full">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Name</span>
                             </div>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full max-w-xs" value={formState.name} onChange={handleChange} />
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered w-full" value={formState.name} onChange={handleChange} />
                         </label>
-                        <label className="form-control w-full max-w-xs mb-4">
+                        <label className="form-control mb-4 w-full">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Type</span>
                             </div>
-                            <select name="type" className="select select-bordered w-full max-w-xs" value={formState.type} onChange={handleChange}>
+                            <select name="type" className="select select-bordered w-full" value={formState.type} onChange={handleChange}>
                                 <option value="horse">Horse</option>
                                 <option value="donkey/mule">Donkey/Mule</option>
                                 <option value="pig">Pig</option>
@@ -106,40 +120,42 @@ export default function AddAnimal() {
                                 <option value="other">Other</option>
                             </select>
                         </label>
-                        <label className="form-control w-full max-w-xs mb-4">
+                        <label className="form-control mb-4 w-full">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Age</span>
                             </div>
-                            <input type="text" name="age" placeholder="Age" className="input input-bordered w-full max-w-xs" value={formState.age} onChange={handleChange} />
+                            <input type="text" name="age" placeholder="Age" className="input input-bordered w-full" value={formState.age} onChange={handleChange} />
                         </label>
-                        <label className="form-control w-full max-w-xs mb-4">
+                        <label className="form-control mb-4 w-full md:col-span-2">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Description</span>
                             </div>
-                            <textarea name="description" className="textarea textarea-bordered textarea-lg" placeholder="Description" value={formState.description} onChange={handleChange}></textarea>
+                            <textarea name="description" className="textarea textarea-bordered textarea-lg w-full" placeholder="Description" value={formState.description} onChange={handleChange}></textarea>
                         </label>
-                        <label className="form-control w-full max-w-xs mb-4">
+                        <label className="form-control mb-4 w-full">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Available for Adoption?</span>
                             </div>
-                            <select name="adoption" className="select select-bordered w-full max-w-xs" value={formState.adoption} onChange={handleChange}>
+                            <select name="adoption" className="select select-bordered w-full" value={formState.adoption} onChange={handleChange}>
                                 <option value="false">No</option>
                                 <option value="true">Yes</option>
                             </select>
                         </label>
-                        <label className="form-control w-full max-w-xs mb-4">
+                        <label className="form-control mb-4 w-full">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Add Profile Photo</span>
                             </div>
-                            <input type="file" name="profileImage" className="file-input file-input-bordered file-input-md w-full max-w-xs" onChange={handleChange} />
+                            <input type="file" name="profileImage" className="file-input file-input-bordered file-input-md w-full" onChange={handleChange} />
                         </label>
-                        <label className="form-control w-full max-w-xs mb-4">
+                        <label className="form-control mb-4 w-full">
                             <div className="label justify-center">
                                 <span className="label-text text-lg">Add Other Photos</span>
                             </div>
-                            <input type="file" name="photos" className="file-input file-input-bordered file-input-md w-full max-w-xs" multiple onChange={handleChange} />
+                            <input type="file" name="photos" className="file-input file-input-bordered file-input-md w-full" multiple onChange={handleChange} />
                         </label>
-                        <button className="btn btn-primary mt-6" type="submit">Submit</button>
+                        <div className="md:col-span-2 flex justify-end">
+                            <button className="btn border-none bg-teal-600 text-white hover:bg-teal-700" type="submit">Save Animal</button>
+                        </div>
                     </form>
                 </div>
                 <form method="dialog" className="modal-backdrop">
